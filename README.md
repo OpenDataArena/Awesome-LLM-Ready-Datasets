@@ -1,5 +1,5 @@
 # Awesome-LLM-Ready-Datasets
-[🇨🇳 中文版 README](./README_ZH.md)
+[🇨🇳 中文版 README](./README_zh.md)
 > A curated collection of datasets ready for training large language or multimodal models — including text, code, image/video/audio domains.
 
 ## Quick Navigation  
