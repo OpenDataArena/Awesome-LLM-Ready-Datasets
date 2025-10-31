@@ -23,7 +23,7 @@
     - [Alignment / RLHF](#multimodal-alignment--rlhf)  
     - [Evaluation / Benchmark](#multimodal-evaluation--benchmark)  
     - [Retrieval / RAG](#multimodal-retrieval--rag)  
-  - [Gen (Image/Video/Audio Generation)](#gen-imagevideoaudio-generation)  
+  - [Generation (Image/Video/Audio)](#gen-imagevideoaudio-generation)  
     - [Pretraining](#gen-imagevideoaudio-generation-pretraining)  
     - [Instruction Tuning](#gen-imagevideoaudio-generation-instruction-tuning)  
     - [Alignment / RLHF](#gen-imagevideoaudio-generation-alignment--rlhf)  
@@ -80,7 +80,7 @@ Tags: `CodeGeneration`, `CodeRepair`, `InstructionFollowing`, `CodeUnderstanding
 ### Multimodal  
 Tags: `VisionLanguageAlignment`, `ImageEditing`, `AudioUnderstanding`, `AudioVisualGeneration`, `Image-Text`, `Audio-Text`, `Video-Text`, `Multilingual`
 
-### Gen (Image/Video/Audio Generation)  
+### Generation (Image/Video/Audio)  
 Tags: `ImageEditing`, `VideoGeneration`, `VideoEditing`, `AudioGeneration`, `AudioVisualGeneration`, `Image-Text`, `Video-Text`, `Audio-Text`
 
 ### Agent  
@@ -167,7 +167,7 @@ Tags: `Dialogue`, `ToolUse`, `InstructionFollowing`, `RetrievalAugmentedGenerati
 ---
 
 <a id="gen"></a>
-### Gen (Image/Video/Audio Generation)
+### Generation (Image/Video/Audio)
 
 <a id="gen-pretraining"></a>
 #### Pretraining
