@@ -101,10 +101,8 @@ Tags: `Dialogue`, `ToolUse`, `InstructionFollowing`, `RetrievalAugmentedGenerati
 #### Pretraining
 - **[Dataset-X](link)** — Tags: `GeneralLM`, `TextOnly`, `English` — A large-scale general text corpus…
 - **[Dataset-Y](link)** — Tags: `MathReasoning`, `TextOnly`, `Chinese` — Chinese mathematics problem dataset…
-- **[Dataset-Name](https://huggingface.co/datasets/OWNER/ID) ｜ 
-  ![Task-TAG](https://img.shields.io/badge/Task-TAG-8e44ad?labelColor=0d1117)  │ ![Modality-TAG](https://img.shields.io/badge/Modality-TAG-1f6feb?labelColor=0d1117)  │ ![Lang-TAG](https://img.shields.io/badge/Lang-TAG-555?labelColor=0d1117)  │ [![HF downloads](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhuggingface.co%2Fapi%2Fdatasets%2FOWNER%2FID&query=%24.downloads&label=HF%20downloads&labelColor=0d1117&color=2f81f7)]( )  │[![GitHub Stars](https://img.shields.io/github/stars/OWNER/REPO?style=flat&label=Stars&labelColor=0d1117&color=ea4aaa&logo=github)]( )
-
-
+- **[UltraChat-200k](https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k)** - Tasks: `CodeGeneration`, `InstructionFollowing` | Mod: `Image-Text`, `Video-Text` | Lang: `English`, `Chinese` |  [![HF](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhuggingface.co%2Fapi%2Fdatasets%2FHuggingFaceH4%2Fultrachat_200k&query=%24.downloads&label=HF&labelColor=0d1117&color=2ecc71&logo=huggingface&logoColor=ffcc00)](https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k) [![GitHub Stars](https://img.shields.io/github/stars/WangRongsheng/awesome-LLM-resources?style=flat&label=Stars&labelColor=0d1117&color=ea4aaa&logo=github&logoColor=white)](https://github.com/WangRongsheng/awesome-LLM-resources)
+  
 <a id="text-instruction-tuning"></a>
 #### Instruction Tuning / SFT
 - **[Dataset-Z](link)** — Tags: `InstructionFollowing`, `Dialogue`, `TextOnly`, `Multilingual` — Multilingual instruction–response pairs…
