@@ -2,6 +2,10 @@
 [🇨🇳 中文版 README](./README_zh.md)
 > A curated collection of datasets ready for training large language or multimodal models — including text, code, image/video/audio domains.
 
+<p align="center">
+  <img src="./llm-ready-datasets.png" alt="llm-datasets" width="700">
+</p>
+
 ## Quick Navigation  
 - [Classification Framework](#classification-framework)  
 - **Dataset Index**  
