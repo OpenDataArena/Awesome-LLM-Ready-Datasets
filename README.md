@@ -11,32 +11,32 @@
 - **Dataset Index**  
   - [Text](#text)  
     - [Pretraining](#text-pretraining)  
-    - [Instruction Tuning](#text-instruction-tuning)  
-    - [Alignment / RLHF](#text-alignment--rlhf)  
+    - [Instruction Tuning / SFT](#text-instruction-tuning)  
+    - [Alignment / RL](#text-alignment--rlhf)  
     - [Evaluation / Benchmark](#text-evaluation--benchmark)  
     - [Retrieval / RAG](#text-retrieval--rag)  
   - [Code](#code)  
     - [Pretraining](#code-pretraining)  
-    - [Instruction Tuning](#code-instruction-tuning)  
-    - [Alignment / RLHF](#code-alignment--rlhf)  
+    - [Instruction Tuning / SFT](#code-instruction-tuning)  
+    - [Alignment / RL](#code-alignment--rlhf)  
     - [Evaluation / Benchmark](#code-evaluation--benchmark)  
     - [Retrieval / RAG](#code-retrieval--rag)  
   - [Multimodal](#multimodal)  
     - [Pretraining](#multimodal-pretraining)  
-    - [Instruction Tuning](#multimodal-instruction-tuning)  
-    - [Alignment / RLHF](#multimodal-alignment--rlhf)  
+    - [Instruction Tuning / SFT](#multimodal-instruction-tuning)  
+    - [Alignment / RL](#multimodal-alignment--rlhf)  
     - [Evaluation / Benchmark](#multimodal-evaluation--benchmark)  
     - [Retrieval / RAG](#multimodal-retrieval--rag)  
   - [Generation (Image/Video/Audio)](#gen-imagevideoaudio-generation)  
     - [Pretraining](#gen-imagevideoaudio-generation-pretraining)  
-    - [Instruction Tuning](#gen-imagevideoaudio-generation-instruction-tuning)  
-    - [Alignment / RLHF](#gen-imagevideoaudio-generation-alignment--rlhf)  
+    - [Instruction Tuning / SFT](#gen-imagevideoaudio-generation-instruction-tuning)  
+    - [Alignment / RL](#gen-imagevideoaudio-generation-alignment--rlhf)  
     - [Evaluation / Benchmark](#gen-imagevideoaudio-generation-evaluation--benchmark)  
     - [Retrieval / RAG](#gen-imagevideoaudio-generation-retrieval--rag)  
   - [Agent](#agent)  
     - [Pretraining](#agent-pretraining)  
-    - [Instruction Tuning](#agent-instruction-tuning)  
-    - [Alignment / RLHF](#agent-alignment--rlhf)  
+    - [Instruction Tuning / SFT](#agent-instruction-tuning)  
+    - [Alignment / RL](#agent-alignment--rlhf)  
     - [Evaluation / Benchmark](#agent-evaluation--benchmark)  
     - [Retrieval / RAG](#agent-retrieval--rag)  
 - [Contribution Guide](#contribution-guide)  
@@ -106,11 +106,11 @@ Tags: `Dialogue`, `ToolUse`, `InstructionFollowing`, `RetrievalAugmentedGenerati
 
 
 <a id="text-instruction-tuning"></a>
-#### Instruction Tuning
+#### Instruction Tuning / SFT
 - **[Dataset-Z](link)** — Tags: `InstructionFollowing`, `Dialogue`, `TextOnly`, `Multilingual` — Multilingual instruction–response pairs…
 
 <a id="text-alignment-rlhf"></a>
-#### Alignment / RLHF
+#### Alignment / RL
 - *(add entries)*
 
 <a id="text-evaluation-benchmark"></a>
@@ -131,11 +131,11 @@ Tags: `Dialogue`, `ToolUse`, `InstructionFollowing`, `RetrievalAugmentedGenerati
 - **[Dataset-A](link)** — Tags: `CodeGeneration`, `CodeOnly`, `Multilingual` — Large open-source code corpus…
 
 <a id="code-instruction-tuning"></a>
-#### Instruction Tuning
+#### Instruction Tuning / SFT
 - **[Dataset-B](link)** — Tags: `CodeRepair`, `InstructionFollowing`, `CodeOnly`, `English` — Code repair instruction–response…
 
 <a id="code-alignment-rlhf"></a>
-#### Alignment / RLHF
+#### Alignment / RL
 - *(add entries)*
 
 <a id="code-evaluation-benchmark"></a>
@@ -156,11 +156,11 @@ Tags: `Dialogue`, `ToolUse`, `InstructionFollowing`, `RetrievalAugmentedGenerati
 - **[Dataset-C](link)** — Tags: `VisionLanguageAlignment`, `Image-Text`, `English` — Large image–text alignment corpus…
 
 <a id="multimodal-instruction-tuning"></a>
-#### Instruction Tuning
+#### Instruction Tuning / SFT
 - **[Dataset-D](link)** — Tags: `ImageEditing`, `Image-Text`, `English` — Instruction-driven image editing…
 
 <a id="multimodal-alignment-rlhf"></a>
-#### Alignment / RLHF
+#### Alignment / RL
 - *(add entries)*
 
 <a id="multimodal-evaluation-benchmark"></a>
@@ -181,11 +181,11 @@ Tags: `Dialogue`, `ToolUse`, `InstructionFollowing`, `RetrievalAugmentedGenerati
 - **[Dataset-E](link)** — Tags: `GeneralLM`, `Image-Text`, `English` — Pretraining for image generation…
 
 <a id="gen-instruction-tuning"></a>
-#### Instruction Tuning
+#### Instruction Tuning / SFT
 - **[Dataset-F](link)** — Tags: `ImageEditing`, `Image-Text`, `English` — Instruction→image editing pairs…
 
 <a id="gen-alignment-rlhf"></a>
-#### Alignment / RLHF
+#### Alignment / RL
 - *(add entries)*
 
 <a id="gen-evaluation-benchmark"></a>
@@ -206,11 +206,11 @@ Tags: `Dialogue`, `ToolUse`, `InstructionFollowing`, `RetrievalAugmentedGenerati
 - **[Dataset-G](link)** — Tags: `InstructionFollowing`, `ToolUse`, `English` — Tool-use traces for agent pretraining…
 
 <a id="agent-instruction-tuning"></a>
-#### Instruction Tuning
+#### Instruction Tuning / SFT
 - **[Dataset-H](link)** — Tags: `Dialogue`, `English`, `Multilingual` — Dialogue data for agents…
 
 <a id="agent-alignment-rlhf"></a>
-#### Alignment / RLHF
+#### Alignment / RL
 - *(add entries)*
 
 <a id="agent-evaluation-benchmark"></a>
