@@ -99,12 +99,12 @@ Tags: `Dialogue`, `ToolUse`, `InstructionFollowing`, `RetrievalAugmentedGenerati
 
 <a id="text-pretraining"></a>
 #### Pretraining
-- **ArabicText 2022** - Tasks: `Text Classification`, `Machine Translation` | Mod: `Text` | Lang: `Arabic`
+- **[ArabicText 2022](https://data.baai.ac.cn/datadetail/ArabicText-2022)** - Tasks: `Text Classification` | Mod: `Text` | Lang: `Arabic`
 
-- **BNC** - Tasks: `Text Classification`, `Information Extraction` | Mod: `Text` | Lang: `English`
-
-- **Baidu baike** - Tasks: `Information Extraction`, `Question Answering` | Mod: `Text` | Lang: `Chinese`
-
+- **[BNC](https://www.natcorp.ox.ac.uk/)** - Tasks: `Text Classification`, `Information Extraction` and so on | Mod: `Text` | Lang: `English`
+  
+- **[Baidu baike](https://huggingface.co/datasets/xuqinyang/BaiduBaike-5.63M)** - Tasks: `Information Extraction`, `Question Answering` | Mod: `Text` | Lang: `Chinese` |  [![HF](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhuggingface.co%2Fapi%2Fdatasets%2Fxuqinyang%2FBaiduBaike-5.63M&query=%24.downloads&label=HF&labelColor=0d1117&color=2ecc71&logo=huggingface&logoColor=ffcc00)](https://huggingface.co/datasets/xuqinyang/BaiduBaike-5.63M) [![GitHub Stars](https://img.shields.io/github/stars/BIT-ENGD/baidu_baike?style=flat&label=Stars&labelColor=0d1117&color=ea4aaa&logo=github&logoColor=white)](https://github.com/BIT-ENGD/baidu_baike)
+  
 - **CLUECorpus2020** - Mod: `Text` | Lang: `Multi`
 
 - **DuSQL** - Tasks: `Code Generation` | Mod: `Text`, `Code` | Lang: `Chinese`
