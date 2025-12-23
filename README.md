@@ -1,6 +1,6 @@
 # Awesome-LLM-Ready-Datasets
 [🇨🇳 中文版 README](./README_zh.md)
-> A curated collection of datasets ready for training large language or multimodal models — including text, code, image/video/audio domains.
+> A curated collection of datasets ready for training large language or multimodal models — including text, code, multimodal, agent domains.
 
 <p align="center">
   <img src="./llm-ready-datasets.png" alt="llm-datasets" width="700">
@@ -27,12 +27,6 @@
     - [Alignment / RL](#multimodal-alignment--rlhf)  
     - [Evaluation / Benchmark](#multimodal-evaluation--benchmark)  
     - [Retrieval / RAG](#multimodal-retrieval--rag)  
-  - [Generation (Image/Video/Audio)](#gen-imagevideoaudio-generation)  
-    - [Pretraining](#gen-imagevideoaudio-generation-pretraining)  
-    - [Instruction Tuning / SFT](#gen-imagevideoaudio-generation-instruction-tuning)  
-    - [Alignment / RL](#gen-imagevideoaudio-generation-alignment--rlhf)  
-    - [Evaluation / Benchmark](#gen-imagevideoaudio-generation-evaluation--benchmark)  
-    - [Retrieval / RAG](#gen-imagevideoaudio-generation-retrieval--rag)  
   - [Agent](#agent)  
     - [Pretraining](#agent-pretraining)  
     - [Instruction Tuning / SFT](#agent-instruction-tuning)  
@@ -49,7 +43,6 @@
 - **Text** — Models primarily handling text input/output.  
 - **Code** — Models specialized on source code tasks (generation, repair, understanding).  
 - **Multimodal** — Models handling two or more modalities (e.g., image+text, audio+text, video+text).  
-- **Gen (Image/Video/Audio Generation)** — Models focused on generative tasks for image, video, or audio.  
 - **Agent** — Models with interactive, tool-using, decision-making capabilities.
 
 ### Level 2: Training Stage  
@@ -83,9 +76,6 @@ Tags: `CodeGeneration`, `CodeRepair`, `InstructionFollowing`, `CodeUnderstanding
 
 ### Multimodal  
 Tags: `VisionLanguageAlignment`, `ImageEditing`, `AudioUnderstanding`, `AudioVisualGeneration`, `Image-Text`, `Audio-Text`, `Video-Text`, `Multilingual`
-
-### Generation (Image/Video/Audio)  
-Tags: `ImageEditing`, `VideoGeneration`, `VideoEditing`, `AudioGeneration`, `AudioVisualGeneration`, `Image-Text`, `Video-Text`, `Audio-Text`
 
 ### Agent  
 Tags: `Dialogue`, `ToolUse`, `InstructionFollowing`, `RetrievalAugmentedGeneration`, `DecisionMaking`, `English`, `Multilingual`
@@ -1085,34 +1075,6 @@ Tags: `Dialogue`, `ToolUse`, `InstructionFollowing`, `RetrievalAugmentedGenerati
 #### Retrieval / RAG
 - **ViDoRe** - Tasks: `Question Answering`, `VQA` | Mod: `Text`, `Image`, `Video` | Lang: `English`
 
----
-
-<a id="gen"></a>
-### Generation (Image/Video/Audio)
-
-
-<a id="gen-pretraining"></a>
-#### Pretraining
-- **[Dataset-E](link)** — Tags: `GeneralLM`, `Image-Text`, `English` — Pretraining for image generation…
-
-
-<a id="gen-instruction-tuning"></a>
-#### Instruction Tuning / SFT
-
-
-<a id="gen-alignment-rlhf"></a>
-#### Alignment / RL
-- *(add entries)*
-
-
-<a id="gen-evaluation-benchmark"></a>
-#### Evaluation / Benchmark
-
-
-
-<a id="gen-retrieval-rag"></a>
-#### Retrieval / RAG
-- *(add entries)*
 
 ---
 
