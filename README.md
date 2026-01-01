@@ -32,7 +32,8 @@
     - [Instruction Tuning / SFT](#agent-instruction-tuning)  
     - [Alignment / RL](#agent-alignment--rlhf)  
     - [Evaluation / Benchmark](#agent-evaluation--benchmark)  
-    - [Retrieval / RAG](#agent-retrieval--rag)  
+    - [Retrieval / RAG](#agent-retrieval--rag) 
+- [Related Resouces](#related-resources)
 - [Contribution Guide](#contribution-guide)  
 
 ---
