@@ -914,7 +914,7 @@ Tags convey additional details: task, modality details, language, usage. A datas
 
 - **[RAG-Instruct-Benchmark-Tester](https://huggingface.co/datasets/llmware/rag_instruct_benchmark_tester)** - Tasks: `Question Answering` | Mod: `Text` | Lang: `English` | [![HF](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhuggingface.co%2Fapi%2Fdatasets%2Fllmware%2Frag_instruct_benchmark_tester&query=%24.downloads&label=HF&labelColor=0d1117&color=2ecc71&logo=huggingface&logoColor=ffcc00)](https://huggingface.co/datasets/llmware/rag_instruct_benchmark_tester)   
 
-- **[RGB](https://github.com/chen700564/RGB)** - Tasks: `Question Answering` | Mod: `Text` | Lang: `English`, `Chinese` | [![GitHub Stars](https://img.shields.io/github/stars/chen700564/RGB?style=flat&label=Stars&labelColor=0d1117&color=ea4aaa&logo=github&logoColor=white)](https://github.com/chen700564/RGB) | 
+- **[RGB](https://github.com/chen700564/RGB)** - Tasks: `Question Answering` | Mod: `Text` | Lang: `English`, `Chinese` | [![GitHub Stars](https://img.shields.io/github/stars/chen700564/RGB?style=flat&label=Stars&labelColor=0d1117&color=ea4aaa&logo=github&logoColor=white)](https://github.com/chen700564/RGB) 
 
 ---
 
