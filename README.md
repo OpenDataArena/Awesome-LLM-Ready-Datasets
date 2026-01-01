@@ -1858,7 +1858,7 @@ Tags convey additional details: task, modality details, language, usage. A datas
 
 
 ---
-## Data in Tech Reports
+## Data in Tech Report
 
 - **[DeepSeek-V3 Technical Report](https://arxiv.org/pdf/2412.19437#page=20.83)** | `2024`
     - **Pretraining**: The model is trained on a diverse multilingual corpus with an enhanced ratio of mathematics and programming samples, utilizing document packing and a Fill-in-Middle (FIM) strategy. ｜ 14.8 trillion tokens.
