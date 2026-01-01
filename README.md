@@ -1868,7 +1868,7 @@ Tags convey additional details: task, modality details, language, usage. A datas
 * [Awesome-LLM](https://github.com/Hannibal046/Awesome-LLM)
 * [Awesome-LLM-Datasets](https://github.com/lmmlzn/Awesome-LLMs-Datasets)
 * [awesome-chatgpt-datasets](https://github.com/voidful/awesome-chatgpt-dataset)
-
+* [LLMDatahub](https://github.com/Zjh-819/LLMDataHub)
 
 ---
 
