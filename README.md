@@ -39,7 +39,7 @@
 ---
 
 ## Update log
-* `2026.1.1` Released the first version, collect naer 800+ datasets among different categories.
+* `2026.1.1` Release the first version, collect naer 800+ datasets among different categories.
 
 
 ---
