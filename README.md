@@ -34,7 +34,12 @@
     - [Evaluation / Benchmark](#agent-evaluation--benchmark)  
     - [Retrieval / RAG](#agent-retrieval--rag)  
 - [Contribution Guide](#contribution-guide)  
-- Current Version: v0.1
+
+---
+
+## Update log
+* `2026.1.1` Released the first version, collect naer 800+ datasets among different categories.
+
 
 ---
 
@@ -55,30 +60,10 @@
 ### Level 3: Tags  
 Tags convey additional details: task, modality details, language, usage. A dataset may have multiple tags. Examples include:  GeneralLM, Dialogue, InstructionFollowing, MathReasoning, CodeGeneration, CodeRepair, ImageEditing, VisionLanguageAlignment, RetrievalAugmentedGeneration, VideoGeneration, VideoEditing, AudioGeneration, AudioUnderstanding, AudioVisualGeneration, TextOnly, Image-Text, Audio-Text, Video-Text, CodeOnly, English, Chinese, Multilingual
 
-- If a dataset is generic pretraining material, tag with `GeneralLM`.  
-- If task is specific (e.g., video generation), tag with `VideoGeneration`.  
-- If dataset involves audio+visual joint data, tag `AudioVisualGeneration`.  
-- If language is a key feature, tag `English`, `Chinese`, `Multilingual`, etc.
-
 ### Classification Principles  
 - Entries are first grouped by Level 1 → Level 2.  
 - Each dataset entry includes Level 3 tags.  
-- If a dataset is suitable for multiple Level 1 types, it can be listed under each relevant section with identical info and a note “also suitable for …”.
-
----
-
-## Tag Examples Per Model / Modality Type  
-### Text  
-Tags: `GeneralLM`, `Dialogue`, `InstructionFollowing`, `MathReasoning`, `QA`, `TextOnly`, `English`, `Chinese`, `Multilingual`
-
-### Code  
-Tags: `CodeGeneration`, `CodeRepair`, `InstructionFollowing`, `CodeUnderstanding`, `CodeOnly`, `Multilingual`
-
-### Multimodal  
-Tags: `VisionLanguageAlignment`, `ImageEditing`, `AudioUnderstanding`, `AudioVisualGeneration`, `Image-Text`, `Audio-Text`, `Video-Text`, `Multilingual`
-
-### Agent  
-Tags: `Dialogue`, `ToolUse`, `InstructionFollowing`, `RetrievalAugmentedGeneration`, `DecisionMaking`, `English`, `Multilingual`
+- If a dataset is suitable for multiple Level 1 types, it can be listed under each relevant section with identical info.
 
 ---
 
@@ -1877,13 +1862,18 @@ Tags: `Dialogue`, `ToolUse`, `InstructionFollowing`, `RetrievalAugmentedGenerati
 - *(add entries)*
 ---
 
+## Related Resources
+* [awesome-LLM-resources](https://github.com/WangRongsheng/awesome-LLM-resources)
+* [Awesome-LLM](https://github.com/Hannibal046/Awesome-LLM)
+* [Awesome-LLM-Datasets](https://github.com/lmmlzn/Awesome-LLMs-Datasets)
+* [awesome-chatgpt-datasets](https://github.com/voidful/awesome-chatgpt-dataset)
+
 ## Contribution Guide  
 We welcome contributions of new datasets or improvements to existing entries. Please ensure your submission includes:  
 - Level 1 type (Model/Modality)  
 - Level 2 stage (Training Stage)  
 - Level 3 tags (task, modality-detail, language, etc)  
 - Dataset link & brief description  
-- If dataset suits multiple Level 1 types, note “also suitable for …”
 
 ---
 
