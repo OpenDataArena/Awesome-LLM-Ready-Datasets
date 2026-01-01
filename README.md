@@ -91,7 +91,7 @@ Tags convey additional details: task, modality details, language, usage. A datas
 
 - **[bookcorpusopen](https://github.com/jackbandy/bookcorpus-datasheet)** - Tasks: `Summarization` | Mod: `Text` | Lang: `English` |  [![GitHub Stars](https://img.shields.io/github/stars/jackbandy/bookcorpus-datasheet?style=flat&label=Stars&labelColor=0d1117&color=ea4aaa&logo=github&logoColor=white)](https://github.com/jackbandy/bookcorpus-datasheet)   
 
-- **[c4](https://huggingface.co/datasets/allenai/c4)** - Tasks: `Summarization` | Mod: `Text` | Lang: `Multi` | [![HF](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhuggingface.co%2Fapi%2Fdatasets%2Fallenai%2Fc4&query=%24.downloads&label=HF&labelColor=0d1117&color=2ecc71&logo=huggingface&logoColor=ffcc00)](https://huggingface.co/datasets/allenai/c4)   
+- **🔥[c4](https://huggingface.co/datasets/allenai/c4)** - Tasks: `Summarization` | Mod: `Text` | Lang: `Multi` | [![HF](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhuggingface.co%2Fapi%2Fdatasets%2Fallenai%2Fc4&query=%24.downloads&label=HF&labelColor=0d1117&color=2ecc71&logo=huggingface&logoColor=ffcc00)](https://huggingface.co/datasets/allenai/c4)   
 
 - **[CBook-150K](https://github.com/FudanNLPLAB/CBook-150K)** - Tasks: `Text Classification` | Mod: `Text` | Lang: `Chinese` | [![GitHub Stars](https://img.shields.io/github/stars/FudanNLPLAB/CBook-150K?style=flat&label=Stars&labelColor=0d1117&color=ea4aaa&logo=github&logoColor=white)](https://github.com/FudanNLPLAB/CBook-150K)   
 
