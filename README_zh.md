@@ -1867,10 +1867,9 @@ English, Chinese, Multilingual, LowResource
 ## 技术报告中数据信息
 
 - **[DeepSeek-V3 Technical Report](https://arxiv.org/pdf/2412.19437#page=20.83)** | `2024`
-
-- **[Pretraining**: 模型在多样化的多语言语料库上进行训练，增加了数学和编程样本的比例，并利用了文档打包（document packing）和中间填充（FIM）策略。｜ 14.8万亿 token。]**
-    - **SFT**: 数据集涵盖多个领域，使用 DeepSeek-R1 生成包含反思模式的推理数据，并使用 DeepSeek-V2.5 生成创意写作等非推理任务数据，且经过人工核验以确保准确性。｜ 150万条样本。
-    - **RL**: 采用群组相对策略优化（GRPO），使用来自代码和数学等不同领域的提示词，并由基于 SFT 检查点训练的规则奖励模型和模型奖励模型共同指导。
+  - **Pretraining**: 模型在多样化的多语言语料库上进行训练，增加了数学和编程样本的比例，并利用了文档打包（document packing）和中间填充（FIM）策略。｜ 14.8万亿 token。
+  - **SFT**: 数据集涵盖多个领域，使用 DeepSeek-R1 生成包含反思模式的推理数据，并使用 DeepSeek-V2.5 生成创意写作等非推理任务数据，且经过人工核验以确保准确性。｜ 150万条样本。
+  - **RL**: 采用群组相对策略优化（GRPO），使用来自代码和数学等不同领域的提示词，并由基于 SFT 检查点训练的规则奖励模型和模型奖励模型共同指导。
 
 - **[DeepSeek-R1](https://arxiv.org/pdf/2501.12948)** | `2025`
     - **Pretraining**: 模型从 DeepSeek-V3-Base 检查点初始化。
@@ -1885,7 +1884,7 @@ English, Chinese, Multilingual, LowResource
 - **[DeepSeekMath](https://arxiv.org/pdf/2402.03300)** | `2024`
     - **Pretraining**: 构建了 DeepSeekMath 语料库，方法是使用在 OpenWebMath 上训练的 fastText 分类器从 Common Crawl 中迭代挖掘数学相关内容。模型（从 DeepSeek-Coder-Base-v1.5 7B 初始化）在5000亿 token 上训练，其中包括1200亿数学 token。｜ 1200亿数学 token（总计5000亿）｜ DeepSeekMath Corpus, Common Crawl, OpenWebMath
     - **SFT**: 在包含思维链（CoT）、程序思维（PoT）和工具集成推理解决方案的数学问题上进行微调。｜ 77.6万样本 ｜ CoT, PoT, 工具集成推理数据
-    - **RL**: 在英语指令微调数据的子集（与 GSM8K 和 MATH 相关的问题）上采用群组相对策略优化（GRPO），以在没有评论者（critic）模型的情况下增强推理能力。｜ 14.4万样本 ｜ GSM8K, MATH（子集）
+    - **RL**: 在英语指令微调数据的子集（与 GSM8K 和 MATH 相关的问题）上采用群组相对策略优化（GRPO），以在没有评论者（critic）模型的情况下增强推理能力。｜ 14.4万样本 ｜ GSM8K, MATH
 
 - **[DeepSeek-Coder](https://arxiv.org/pdf/2401.14196)** | `2024`
     - **Pretraining**: 模型在项目级代码语料库上从头训练，利用包含依赖解析和拓扑排序的仓库级数据构建来增强跨文件生成。训练目标包括下一个 token 预测和中间填充（FIM）任务。｜ 2万亿 token ｜ 87% 源代码（87种语言），10% 英文代码相关文本（GitHub Markdown, StackExchange），3% 中文自然语言。
@@ -1893,7 +1892,7 @@ English, Chinese, Multilingual, LowResource
 
 - **[DeepSeek-VL](https://arxiv.org/pdf/2403.05525)** | `2024`
     - **Pretraining**: 构建自多种来源，包括网页截图、PDF、OCR数据、图表和基于知识的内容，以覆盖现实世界场景，并与纯文本数据集成以保留语言能力。视觉语言数据包括交错图文、图像描述和表格/图表数据。｜ 规模提及：来自 ShareGPT4V 的125万条描述和用于初始适配器训练的250万对 OCR 数据；联合预训练使用约 7:3 的语言与多模态数据比例。｜ 数据集：MMC4, Wikipedia, Wikihow, Capsfusion, Detailed Caption, Chart2text, Geo170K, Unichart, Websight, arXiv rendered markdown, DeepSeek-LLM corpus。
-    - **SFT**: 利用从真实用户场景派生的用例分类法构建的指令微调数据集，混合多模态数据与纯文本对话数据。数据集包括通用视觉问答、文档理解和网页到代码生成任务。｜ 数据集：ShareGPT4V, LAION-GPTV, LVIS-Instruct4V, textOCR-GPT4V, LLaVA1.6-GPT4V, IconQA, Ureader, Screen-to-code, DeepSeek-LLM（纯文本SFT）。
+    - **SFT**: 利用从真实用户场景派生的用例分类法构建的指令微调数据集，混合多模态数据与纯文本对话数据。数据集包括通用视觉问答、文档理解和网页到代码生成任务。｜ 数据集：ShareGPT4V, LAION-GPTV, LVIS-Instruct4V, textOCR-GPT4V, LLaVA1.6-GPT4V, IconQA, Ureader, Screen-to-code, DeepSeek-LLM。
 
 - **[DeepSeekMoE](https://arxiv.org/pdf/2401.06066)** | `2024`
     - **Pretraining**: 模型（特别是16B版本）在大规模语料库上进行训练，以验证专家专业化及相对于稠密基线模型的性能。｜ 2万亿 token。
@@ -1906,7 +1905,7 @@ English, Chinese, Multilingual, LowResource
 
 - **[LLaMA](https://arxiv.org/pdf/2302.13971)** | `2023`
     - **Pretraining**: 训练数据集是公开可用来源的混合体，使用字节对编码（BPE）算法进行分词。数据预处理涉及去重、使用 fastText 分类器进行语言识别以及使用 n-gram 语言模型进行质量过滤。｜ 1.4万亿 token（65B/33B模型），1万亿 token（7B/13B模型）｜ English CommonCrawl, C4, Github, Wikipedia, Gutenberg and Books3, ArXiv, StackExchange
-    - **SFT**: 进行了一次实验（LLaMA-I），通过在指令数据上微调以提高 MMLU 性能。该过程遵循 Chung et al. (2022) 的协议。｜ 指令数据集
+    - **SFT**: 进行了一次实验（LLaMA-I），通过在指令数据上微调以提高 MMLU 性能。该过程遵循 Chung et al. (2022) 的协议。
 
 - **[Llama 2](https://arxiv.org/pdf/2307.09288)** | `2023`
     - **Pretraining**: 在公开可用来源的新混合数据上训练，严格排除了来自 Meta 产品或服务的数据以及包含敏感个人信息的网站。｜ 2万亿 token。
@@ -2001,7 +2000,7 @@ English, Chinese, Multilingual, LowResource
 - **[InternVL 2.5](https://arxiv.org/pdf/2412.05271)** | `2024`
     - **Pretraining**: 利用渐进式扩展策略和动态高分辨率训练（包括 MLP 预热和可选的 ViT 增量学习），使用开源网络规模图文数据。｜ 1200亿 token（78B模型总训练量）。
     - **SFT**: 全模型指令微调采用高质量多模态指令数据集，通过基于 LLM 的质量评分和启发式规则（如重复检测）进行过滤。
-    - **RL**: 应用混合偏好优化（MPO）增强推理能力，使用由正负对构建的高质量多模态推理偏好数据集。｜ 300万样本。｜ MMPR（多模态偏好推理数据集）。
+    - **RL**: 应用混合偏好优化（MPO）增强推理能力，使用由正负对构建的高质量多模态推理偏好数据集。｜ 300万样本。｜ MMPR。
 
 - **[InternVL3](https://arxiv.org/pdf/2504.10479?)** | `2025`
     - **Pretraining**: 采用“原生多模态预训练”范式，在单一阶段联合学习多模态和纯文本数据。多模态数据利用 InternVL2.5 数据（涵盖 OCR、图表、数学等）并补充新的现实世界数据（GUI、3D、视频），而纯文本数据基于 InternLM2.5 语料库并丰富了开源数据集。
@@ -2021,7 +2020,7 @@ English, Chinese, Multilingual, LowResource
 - **[Intern-S1](https://arxiv.org/pdf/2508.15763)** | `2025`
     - **Pretraining**: 在包含专业科学数据（分子结构、蛋白质序列等）和通用数据的大规模多模态语料库上持续预训练，利用纯文本和多模态流水线保留方程和图形等细粒度结构。｜ 5万亿 token（包括 >2.5万亿科学 token）。
     - **SFT**: 构建多模态流水线以生成指令式和考试式监督数据，采用基于规则的过滤器和 LLM（如 Qwen2.5）确保跨六个科学领域的结构完整性和答案完整性。
-    - **RL**: 在 InternBootCamp 框架内实施离线和在线强化学习，利用混合奖励（MoR）策略协同跨不同任务的训练。｜ >1000个任务。
+    - **RL**: 在 InternBootCamp 框架内实施离线和在线强化学习，利用混合奖励（MoR）策略协同跨不同任务的训练。
 
 - **[GLM-4.5](https://arxiv.org/pdf/2508.06471)** | `2025`
     - **Pretraining**: 在经过质量分类、MinHash/SemDedup 去重和高价值内容上采样的多样化语料库上训练。该过程包括通用阶段，随后是专注于仓库级代码、合成推理数据和 Agent 轨迹的“中期训练”阶段，以增强领域能力。｜ 23万亿 token（22T 通用 + 1.1T 专用）｜ Webpages, Books, Papers, Code Repositories, Synthetic Reasoning Data
