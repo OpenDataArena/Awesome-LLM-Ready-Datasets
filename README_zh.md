@@ -1,7 +1,10 @@
 # Awesome-LLM-Ready-Datasets
 [🌍 English README](./README.md)
-> 为开源大模型训练准备的高价值数据集清单，覆盖文本、代码、图像/音频/视频、多模态与 Agent。  
-> 采用：一级（模型/模态）→ 二级（训练阶段）→ 三级（标签）组织方式。
+
+为开源大模型训练准备的高价值数据集清单，覆盖文本、代码、图像/音频/视频、多模态与 Agent。同时还统计了知名的开源技术报告中所提到的相关数据信息。 
+> 受欢迎的数据集前用🔥进行了标识。
+
+> Github 的星标数以及 HuggingFace 的数据集下载量都进行了自动统计。
 
 <p align="center">
   <img src="./llm-ready-datasets.png" alt="llm-datasets" width="700">
