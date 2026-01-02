@@ -2024,7 +2024,7 @@ English, Chinese, Multilingual, LowResource
 
 - **[GLM-4.5](https://arxiv.org/pdf/2508.06471)** | `2025`
     - **Pretraining**: 在经过质量分类、MinHash/SemDedup 去重和高价值内容上采样的多样化语料库上训练。该过程包括通用阶段，随后是专注于仓库级代码、合成推理数据和 Agent 轨迹的“中期训练”阶段，以增强领域能力。｜ 23万亿 token（22T 通用 + 1.1T 专用）｜ Webpages, Books, Papers, Code Repositories, Synthetic Reasoning Data
-    - **SFT**: 利用“专家模型迭代”策略，训练专门的专家模型（推理、Agent、聊天）并将其能力蒸馏到统一模型中。此阶段整合了合成数据和最佳匹配打包（best-fit packing）以支持长上下文 Agent 任务。｜ - ｜ Synthetic Agent Trajectories
+    - **SFT**: 利用“专家模型迭代”策略，训练专门的专家模型（推理、Agent、聊天）并将其能力蒸馏到统一模型中。此阶段整合了合成数据和最佳匹配打包（best-fit packing）以支持长上下文 Agent 任务。
     - **RL**: 在全上下文长度（高达 128K）下采用单阶段强化学习以优化对齐和性能。反馈机制包括用于编码的基于执行的信号和用于通用对齐的人类偏好数据。
 
 - **[GLM-4.5V and GLM-4.1V-Thinking](https://arxiv.org/pdf/2507.01006)** | `2025`
