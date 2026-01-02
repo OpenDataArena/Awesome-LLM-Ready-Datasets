@@ -1867,177 +1867,176 @@ English, Chinese, Multilingual, LowResource
 ## 技术报告中数据信息
 
 - **[DeepSeek-V3 Technical Report](https://arxiv.org/pdf/2412.19437#page=20.83)** | `2024`
-    - **Pretraining**: The model is trained on a diverse multilingual corpus with an enhanced ratio of mathematics and programming samples, utilizing document packing and a Fill-in-Middle (FIM) strategy. ｜ 14.8 trillion tokens.
-    - **SFT**: The dataset spans multiple domains, using DeepSeek-R1 to generate reasoning data that incorporates reflection patterns and DeepSeek-V2.5 for non-reasoning tasks like creative writing, with human verification for accuracy. ｜ 1.5M instances.
-    - **RL**: The process employs Group Relative Policy Optimization (GRPO) using prompts from diverse domains such as coding and math, guided by both rule-based reward models and model-based reward models trained from SFT checkpoints.
+
+- **[Pretraining**: 模型在多样化的多语言语料库上进行训练，增加了数学和编程样本的比例，并利用了文档打包（document packing）和中间填充（FIM）策略。｜ 14.8万亿 token。]**
+    - **SFT**: 数据集涵盖多个领域，使用 DeepSeek-R1 生成包含反思模式的推理数据，并使用 DeepSeek-V2.5 生成创意写作等非推理任务数据，且经过人工核验以确保准确性。｜ 150万条样本。
+    - **RL**: 采用群组相对策略优化（GRPO），使用来自代码和数学等不同领域的提示词，并由基于 SFT 检查点训练的规则奖励模型和模型奖励模型共同指导。
 
 - **[DeepSeek-R1](https://arxiv.org/pdf/2501.12948)** | `2025`
-    - **Pretraining**: The model is initialized from the DeepSeek-V3-Base checkpoint.
-    - **SFT**: Utilizes thousands of "cold-start" long Chain-of-Thought (CoT) samples (collected via few-shot prompting and human refinement) to improve readability. Later, employs 800,000 samples, comprising 600k reasoning samples generated via rejection sampling and 200k non-reasoning samples (e.g., writing, QA) from DeepSeek-V3.
-    - **RL**: Applies Group Relative Policy Optimization (GRPO) using prompts for reasoning tasks (math, coding) with rule-based rewards (accuracy, format consistency). Also includes a stage with human preference rewards and prompts from diverse scenarios to align with helpfulness and harmlessness.
-
+    - **Pretraining**: 模型从 DeepSeek-V3-Base 检查点初始化。
+    - **SFT**: 利用数千条“冷启动”长思维链（CoT）样本（通过少样本提示和人工优化收集）来提高可读性。随后，使用了80万条样本，包括通过拒绝采样生成的60万条推理样本和来自 DeepSeek-V3 的20万条非推理样本（如写作、问答）。
+    - **RL**: 应用群组相对策略优化（GRPO），使用针对推理任务（数学、代码）的提示词，并配备基于规则的奖励（准确性、格式一致性）。还包括一个阶段，使用人类偏好奖励和来自不同场景的提示词，以对齐有用性和无害性。
 
 - **[DeepSeek-V2](https://arxiv.org/pdf/2405.04434)** | `2024`
-    - **Pretraining**: The model is trained on a diverse, high-quality, multi-source corpus with an optimized cleaning process to retain valuable data while filtering contentious content. It features a significant increase in Chinese data, where Chinese tokens are approximately 12% more than English ones. ｜ 8.1 trillion tokens.
-    - **SFT**: The dataset consists of conversational sessions covering domains such as math, code, writing, reasoning, and safety to unlock the model's potential. It comprises 1.2M helpfulness samples and 0.3M safety samples. ｜ 1.5M instances.
-    - **RL**: This stage employs Group Relative Policy Optimization (GRPO) to align the model with human preferences, focusing on instruction following and safety.
+    - **Pretraining**: 模型在多样化、高质量、多源语料库上进行训练，采用优化的清洗流程保留有价值数据并过滤有争议内容。其特点是中文数据显著增加，中文 token 比英文多约12%。｜ 8.1万亿 token。
+    - **SFT**: 数据集包含覆盖数学、代码、写作、推理和安全等领域的对话会话，以释放模型潜力。它包含120万条有用性样本和30万条安全性样本。｜ 150万条样本。
+    - **RL**: 此阶段采用群组相对策略优化（GRPO）使模型与人类偏好对齐，重点关注指令遵循和安全性。
 
 - **[DeepSeekMath](https://arxiv.org/pdf/2402.03300)** | `2024`
-    - **Pretraining**: Constructed the DeepSeekMath Corpus by iteratively mining math-related content from Common Crawl using a fastText classifier trained on OpenWebMath. The model (initialized from DeepSeek-Coder-Base-v1.5 7B) was trained on 500B tokens, including 120B math tokens. ｜ 120B math tokens (500B total) ｜ DeepSeekMath Corpus, Common Crawl, OpenWebMath
-    - **SFT**: Fine-tuned on mathematical problems with Chain-of-Thought (CoT), Program-of-Thought (PoT), and tool-integrated reasoning solutions. ｜ 776K samples ｜ CoT, PoT, Tool-integrated reasoning data
-    - **RL**: Employed Group Relative Policy Optimization (GRPO) on a subset of English instruction tuning data (questions related to GSM8K and MATH) to enhance reasoning without a critic model. ｜ 144K samples ｜ GSM8K, MATH (subset)
+    - **Pretraining**: 构建了 DeepSeekMath 语料库，方法是使用在 OpenWebMath 上训练的 fastText 分类器从 Common Crawl 中迭代挖掘数学相关内容。模型（从 DeepSeek-Coder-Base-v1.5 7B 初始化）在5000亿 token 上训练，其中包括1200亿数学 token。｜ 1200亿数学 token（总计5000亿）｜ DeepSeekMath Corpus, Common Crawl, OpenWebMath
+    - **SFT**: 在包含思维链（CoT）、程序思维（PoT）和工具集成推理解决方案的数学问题上进行微调。｜ 77.6万样本 ｜ CoT, PoT, 工具集成推理数据
+    - **RL**: 在英语指令微调数据的子集（与 GSM8K 和 MATH 相关的问题）上采用群组相对策略优化（GRPO），以在没有评论者（critic）模型的情况下增强推理能力。｜ 14.4万样本 ｜ GSM8K, MATH（子集）
 
 - **[DeepSeek-Coder](https://arxiv.org/pdf/2401.14196)** | `2024`
-    - **Pretraining**: The model is trained from scratch on a project-level code corpus, utilizing repository-level data construction with dependency parsing and topological sorting to enhance cross-file generation. The training objective includes next-token prediction and a Fill-In-Middle (FIM) task. ｜ 2 trillion tokens ｜ 87% source code (87 languages), 10% English code-related text (GitHub Markdown, StackExchange), 3% Chinese natural language.
-    - **SFT**: The base model undergoes fine-tuning on a dataset of instruction data to create the instruct version. ｜ 2 billion tokens.
+    - **Pretraining**: 模型在项目级代码语料库上从头训练，利用包含依赖解析和拓扑排序的仓库级数据构建来增强跨文件生成。训练目标包括下一个 token 预测和中间填充（FIM）任务。｜ 2万亿 token ｜ 87% 源代码（87种语言），10% 英文代码相关文本（GitHub Markdown, StackExchange），3% 中文自然语言。
+    - **SFT**: 基础模型在指令数据集上进行微调，以创建指令版本。｜ 20亿 token。
 
 - **[DeepSeek-VL](https://arxiv.org/pdf/2403.05525)** | `2024`
-    - **Pretraining**: Constructed from diverse sources including web screenshots, PDFs, OCR data, charts, and knowledge-based content to cover real-world scenarios, integrated with text-only data to preserve language capabilities. The vision-language data includes interleaved image-text, image captions, and table/chart data. ｜ Scale mentions 1.25M captions from ShareGPT4V and 2.5M OCR pairs for the initial adaptor training; Joint pretraining uses a ~7:3 ratio of language to multimodal data. ｜ Datasets: MMC4, Wikipedia, Wikihow, Capsfusion, Detailed Caption, Chart2text, Geo170K, Unichart, Websight, arXiv rendered markdown, DeepSeek-LLM corpus.
-    - **SFT**: Utilizes an instruction-tuning dataset constructed from a use case taxonomy derived from real user scenarios, mixing multimodal data with text-only dialogue data. The dataset includes general visual QA, document understanding, and web-to-code generation tasks. ｜ Datasets: ShareGPT4V, LAION-GPTV, LVIS-Instruct4V, textOCR-GPT4V, LLaVA1.6-GPT4V, IconQA, Ureader, Screen-to-code, DeepSeek-LLM (text-only SFT).
+    - **Pretraining**: 构建自多种来源，包括网页截图、PDF、OCR数据、图表和基于知识的内容，以覆盖现实世界场景，并与纯文本数据集成以保留语言能力。视觉语言数据包括交错图文、图像描述和表格/图表数据。｜ 规模提及：来自 ShareGPT4V 的125万条描述和用于初始适配器训练的250万对 OCR 数据；联合预训练使用约 7:3 的语言与多模态数据比例。｜ 数据集：MMC4, Wikipedia, Wikihow, Capsfusion, Detailed Caption, Chart2text, Geo170K, Unichart, Websight, arXiv rendered markdown, DeepSeek-LLM corpus。
+    - **SFT**: 利用从真实用户场景派生的用例分类法构建的指令微调数据集，混合多模态数据与纯文本对话数据。数据集包括通用视觉问答、文档理解和网页到代码生成任务。｜ 数据集：ShareGPT4V, LAION-GPTV, LVIS-Instruct4V, textOCR-GPT4V, LLaVA1.6-GPT4V, IconQA, Ureader, Screen-to-code, DeepSeek-LLM（纯文本SFT）。
 
 - **[DeepSeekMoE](https://arxiv.org/pdf/2401.06066)** | `2024`
-    - **Pretraining**: The model (specifically the 16B version) is trained on a large-scale corpus to validate the expert specialization and performance against dense baselines. ｜ 2T tokens.
-    - **SFT**: Supervised fine-tuning is performed on the base model to create an aligned chat version, following the same fine-tuning settings and data as DeepSeek 7B Chat.
+    - **Pretraining**: 模型（特别是16B版本）在大规模语料库上进行训练，以验证专家专业化及相对于稠密基线模型的性能。｜ 2万亿 token。
+    - **SFT**: 在基础模型上进行有监督微调以创建对齐的聊天版本，遵循与 DeepSeek 7B Chat 相同的微调设置和数据。
 
 - **[DeepSeek-Coder-V2](https://arxiv.org/pdf/2406.11931)** | `2024`
-    - **Pretraining**: The model is further pre-trained from a DeepSeek-V2 intermediate checkpoint on a high-quality, multi-source corpus comprising 60% source code, 10% math, and 30% natural language. The source code covers 338 programming languages. ｜ 6 trillion tokens (additional).
-    - **SFT**: The instruction training dataset consists of code and math data from DeepSeek-Coder and DeepSeek-Math, combined with general instruction data from DeepSeek-V2.
-    - **RL**: Employs Group Relative Policy Optimization (GRPO) using preference data collected in the coding domain through compiler feedback and test cases.
+    - **Pretraining**: 模型从 DeepSeek-V2 中间检查点开始，在包含60%源代码、10%数学和30%自然语言的高质量多源语料库上进一步预训练。源代码覆盖338种编程语言。｜ 6万亿 token（额外）。
+    - **SFT**: 指令训练数据集由来自 DeepSeek-Coder 和 DeepSeek-Math 的代码和数学数据，以及来自 DeepSeek-V2 的通用指令数据组成。
+    - **RL**: 采用群组相对策略优化（GRPO），使用通过编译器反馈和测试用例收集的编码领域偏好数据。
 
 - **[LLaMA](https://arxiv.org/pdf/2302.13971)** | `2023`
-    - **Pretraining**: The training dataset is a mixture of publicly available sources, tokenized using the Byte-Pair Encoding (BPE) algorithm. The data preprocessing involves deduplication, language identification with a fastText classifier, and quality filtering with an n-gram language model. ｜ 1.4 trillion tokens (65B/33B models), 1 trillion tokens (7B/13B models) ｜ English CommonCrawl, C4, Github, Wikipedia, Gutenberg and Books3, ArXiv, StackExchange
-    - **SFT**: A single experiment (LLaMA-I) was conducted by fine-tuning on instruction data to improve MMLU performance. The process follows the protocol of Chung et al. (2022). ｜ Instruction dataset
+    - **Pretraining**: 训练数据集是公开可用来源的混合体，使用字节对编码（BPE）算法进行分词。数据预处理涉及去重、使用 fastText 分类器进行语言识别以及使用 n-gram 语言模型进行质量过滤。｜ 1.4万亿 token（65B/33B模型），1万亿 token（7B/13B模型）｜ English CommonCrawl, C4, Github, Wikipedia, Gutenberg and Books3, ArXiv, StackExchange
+    - **SFT**: 进行了一次实验（LLaMA-I），通过在指令数据上微调以提高 MMLU 性能。该过程遵循 Chung et al. (2022) 的协议。｜ 指令数据集
 
 - **[Llama 2](https://arxiv.org/pdf/2307.09288)** | `2023`
-    - **Pretraining**: Trained on a new mix of data from publicly available sources, strictly excluding data from Meta’s products or services and sites with sensitive personal information. ｜ 2 trillion tokens.
-    - **SFT**: Initially utilized publicly available instruction tuning data (rejected for quality later), followed by high-quality human annotations focusing on helpfulness and safety. ｜ 27,540 annotations.
-    - **RL**: Used human preference data where annotators selected the better of two model responses, focusing on helpfulness and safety to train reward models. ｜ Over 1 million binary comparisons (1,418,091 examples). ｜ Meta Helpfulness, Meta Safety.
+    - **Pretraining**: 在公开可用来源的新混合数据上训练，严格排除了来自 Meta 产品或服务的数据以及包含敏感个人信息的网站。｜ 2万亿 token。
+    - **SFT**: 最初使用公开可用的指令微调数据（后因质量问题被剔除），随后使用了专注于有用性和安全性的高质量人工标注数据。｜ 27,540条标注。
+    - **RL**: 使用人类偏好数据，由标注者选择两个模型回答中更好的一个，专注于有用性和安全性以训练奖励模型。｜ 超过100万次二元比较（1,418,091个示例）。｜ Meta Helpfulness, Meta Safety。
 
 - **[Llama 3](https://arxiv.org/pdf/2407.21783)** | `2024`
-    - **Pretraining**: Trained on a dataset of 15.6 trillion multilingual tokens from publicly available sources. The data pipeline involves rigorous deduplication, heuristic filtering, and model-based quality filtering, concluding with an annealing phase on high-quality data.
-    - **SFT**: Utilizes a combination of human-curated examples and a vast amount of synthetic data generated via rejection sampling and other techniques. The data construction targets specific capabilities like coding and reasoning, often using execution feedback to verify correctness.
-    - **RL**: Employs both human preference data (where annotators rate the strength of preference between model outputs) and synthetic preference data. This data is used for training Reward Models and for aligning the model via Direct Preference Optimization (DPO) and PPO across multiple rounds.
+    - **Pretraining**: 在包含15.6万亿多语言 token 的公开来源数据集上训练。数据流水线涉及严格去重、启发式过滤和基于模型的质量过滤，并在高质量数据上进行退火阶段。
+    - **SFT**: 结合了人工精选示例和通过拒绝采样及其他技术生成的大量合成数据。数据构建针对特定能力（如编码和推理），通常使用执行反馈来验证正确性。
+    - **RL**: 采用人类偏好数据（标注者对模型输出的偏好程度进行评级）和合成偏好数据。这些数据用于训练奖励模型，并通过直接偏好优化（DPO）和 PPO 进行多轮模型对齐。
 
 - **[Qwen](https://arxiv.org/pdf/2309.16609)** | `2023`
-    - **Pretraining**: Constructed from a large-scale, diverse, and high-quality corpus covering a wide range of domains and languages (focusing on Chinese and English). The data includes web texts, books, and code, optimized for distribution through ablation experiments. ｜ 3 trillion tokens.
-    - **SFT**: Utilizes a curated dataset relevant to task performance, chat, tool use, agent, and safety, with a focus on improving diversity and complexity. Quality is strictly controlled through manual checking and automatic evaluation.
-    - **RL**: Employs Reinforcement Learning from Human Feedback (RLHF) to align the model with human preferences. It involves training a reward model on large-scale comparison data and finetuning on carefully labeled high-quality comparison data.
+    - **Pretraining**: 构建自大规模、多样化且高质量的语料库，涵盖广泛的领域和语言（侧重中文和英文）。数据包括网页文本、书籍和代码，并通过消融实验优化分布。｜ 3万亿 token。
+    - **SFT**: 利用与任务执行、聊天、工具使用、Agent 和安全相关的精选数据集，重点提高多样性和复杂性。通过人工检查和自动评估严格控制质量。
+    - **RL**: 采用基于人类反馈的强化学习（RLHF）使模型与人类偏好对齐。这涉及在大规模比较数据上训练奖励模型，并在仔细标注的高质量比较数据上进行微调。
 
 - **[Qwen2](https://arxiv.org/pdf/2407.10671)** | `2024`
-    - **Pretraining**: Constructed from a large-scale, high-quality multilingual dataset covering diverse domains, including extensive code and mathematics content. The data pipeline employs heuristic and model-based filtering (using Qwen models) to ensure quality. ｜ over 7 trillion tokens
-    - **SFT**: Utilizes a combination of collaborative data annotation (using InsTag for ontology extraction and human refinement) and automated data synthesis (including rejection sampling for math/code). The process focuses on creating high-quality demonstration data with diverse instructions. ｜ over 500,000 examples
-    - **RL**: Implements Reinforcement Learning from Human Feedback (RLHF) and Direct Preference Optimization (DPO) to align the model with human values. The training uses preference data pairs (chosen vs. rejected responses) derived from model outputs.
+    - **Pretraining**: 构建自涵盖多领域的大规模高质量多语言数据集，包括大量代码和数学内容。数据流水线采用启发式和基于模型的过滤（使用 Qwen 模型）以确保质量。｜ 超过7万亿 token
+    - **SFT**: 结合了协作数据标注（使用 InsTag 进行本体提取和人工优化）和自动数据合成（包括针对数学/代码的拒绝采样）。该过程侧重于创建具有多样化指令的高质量演示数据。｜ 超过50万个示例
+    - **RL**: 实施基于人类反馈的强化学习（RLHF）和直接偏好优化（DPO），使模型与人类价值观对齐。训练使用从模型输出中派生的偏好数据对（被选中的 vs 被拒绝的回答）。
 
 - **[Qwen2.5](https://arxiv.org/pdf/2412.15115)** | `2024`
-    - **Pretraining**: The dataset is scaled to 18 trillion tokens, focusing on common sense, expert knowledge, coding, and mathematics. It employs sophisticated filtering and scoring mechanisms with a strategic data mixture to ensure high quality.
-    - **SFT**: Utilizes over 1 million samples of high-quality instruction data, including agent-generated synthetic data for long-context tasks. The data targets capabilities like long text generation, structured data understanding, and instruction following.
-    - **RL**: Implements multistage reinforcement learning, consisting of Offline RL on sanitized, valid training data and Online RL using reward models aligned with human preferences. The process explicitly incorporates Direct Preference Optimization (DPO) and Group Relative Policy Optimization (GRPO).
+    - **Pretraining**: 数据集扩展至18万亿 token，重点关注常识、专家知识、编码和数学。它采用复杂的过滤和评分机制，并配合策略性的数据混合以确保高质量。
+    - **SFT**: 利用超过100万条高质量指令数据样本，包括用于长上下文任务的 Agent 生成合成数据。数据针对长文本生成、结构化数据理解和指令遵循等能力。
+    - **RL**: 实施多阶段强化学习，包括在经过清洗的有效训练数据上进行的离线 RL，以及使用与人类偏好对齐的奖励模型进行的在线 RL。该过程明确整合了直接偏好优化（DPO）和群组相对策略优化（GRPO）。
 
 - **[Qwen3](https://arxiv.org/pdf/2505.09388)** | `2025`
-    - **Pretraining**: Trained in three stages: first on a large corpus for general knowledge, then on knowledge-intensive data (STEM, coding) to enhance reasoning, and finally on long-context data to extend context length. ｜ 30 trillion tokens.
-    - **SFT**: Utilizes a multi-stage post-training approach that includes "cold-start" fine-tuning with long Chain-of-Thought (CoT) data to develop strong reasoning abilities, supporting both thinking and non-thinking modes.
-    - **RL**: Applies reinforcement learning specifically focusing on mathematics and coding tasks to further empower the model's reasoning capabilities.
+    - **Pretraining**: 分三个阶段训练：首先在大规模语料库上进行通用知识训练，然后在知识密集型数据（STEM、编码）上训练以增强推理能力，最后在长上下文数据上训练以扩展上下文长度。｜ 30万亿 token。
+    - **SFT**: 采用多阶段后训练方法，包括使用长思维链（CoT）数据进行“冷启动”微调以开发强大的推理能力，支持思考和非思考模式。
+    - **RL**: 应用专注于数学和编码任务的强化学习，以进一步增强模型的推理能力。
 
 - **[Qwen-VL](https://arxiv.org/pdf/2308.12966)** | `2023`
-    - **Pretraining**: Utilizes a large-scale, weakly labeled set of image-text pairs cleaned from publicly accessible and in-house sources to align visual and language representations. ｜ 1.4 billion pairs (cleaned from 5 billion) ｜ LAION-en, LAION-COCO, DataComp, Coyo, CC12M, CC3M, SBU, COCO Caption
-    - **SFT**: Employs multimodal instruction tuning data, including dialogue, multi-image inputs, and localization tasks, to fine-tune the model (Qwen-VL-Chat) for alignment and interaction.
-    - **Multi-task Pre-training**: Introduces high-quality, fine-grained annotated data with higher image resolution (448x448) to equip the model with visual grounding and text-reading capabilities.
+    - **Pretraining**: 利用从公开可访问来源和内部来源清洗出的大规模弱标签图文对，以对齐视觉和语言表示。｜ 14亿对（从50亿清洗而来）｜ LAION-en, LAION-COCO, DataComp, Coyo, CC12M, CC3M, SBU, COCO Caption
+    - **SFT**: 采用多模态指令微调数据，包括对话、多图输入和定位任务，以微调模型（Qwen-VL-Chat）进行对齐和交互。
+    - **Multi-task Pre-training**: 引入更高图像分辨率（448x448）的高质量细粒度标注数据，使模型具备视觉定位和文本阅读能力。
 
 - **[Qwen2.5-VL](https://arxiv.org/pdf/2502.13923)** | `2025`
-    - **Pretraining**: Utilizes a curated dataset expanded from 1.2 trillion to 4.1 trillion tokens, incorporating diverse multimodal data including synthesized "Document Omni-Parsing Data" (tables, charts, chemical formulas, etc. in HTML). The process follows three stages: basic visual understanding with image-text pairs, complex document understanding, and specialized data integration for grounding and agent capabilities. ｜ 4.1 trillion tokens
-    - **SFT**: Employes curated instruction-following data (both pure text and multimodal) emphasizing dialogue, task-specific responses, and agent interactions collected from screenshots and UI interactions. Focuses on enhancing capabilities like long-text generation and structured data comprehension.
-    - **RL**: enhancing mathematical and problem-solving abilities through reinforcement learning, specifically using Direct Preference Optimization (DPO) to align the model with human preferences and improve response styles.
+    - **Pretraining**: 利用从1.2万亿扩展到4.1万亿 token 的精选数据集，整合了包括合成的“文档全解析数据”（HTML 格式的表格、图表、化学式等）在内的多样化多模态数据。过程遵循三个阶段：基于图文对的基础视觉理解、复杂文档理解以及用于定位和 Agent 能力的专业数据集成。｜ 4.1万亿 token
+    - **SFT**: 采用精选的指令遵循数据（纯文本和多模态），强调对话、特定任务响应以及从截图和 UI 交互中收集的 Agent 交互。专注于增强长文本生成和结构化数据理解等能力。
+    - **RL**: 通过强化学习增强数学和解决问题的能力，特别是使用直接偏好优化（DPO）使模型与人类偏好对齐并改善回答风格。
 
 - **[Qwen3-VL](https://arxiv.org/pdf/2511.21631)** | `2025`
-    - **Pretraining**: The data is overhauled for quality and diversity, featuring enhanced caption supervision, expanded omni-recognition/OCR coverage, and normalized grounding with 3D/spatial reasoning. The process proceeds in four phases with progressively larger context windows (8K, 32K, 256K). ｜ 30 million in-house OCR samples, 3 million PDFs.
-    - **SFT**: Utilizes a two-phase process (initially 32k context, extended to 256k) incorporating "Long-CoT Cold Start" data for reasoning tasks (math, code, logic) and knowledge distillation from a stronger teacher. Includes "Thinking" and "Non-Thinking" variants to address different application needs.
-    - **RL**: Implements Reasoning RL and General RL stages to enhance multimodal reasoning and general capabilities. This phase likely employs reward systems to align with human preferences and optimize specific task performance.
+    - **Pretraining**: 数据在质量和多样性方面进行了全面革新，具有增强的 Caption 监督、扩展的全识别/OCR 覆盖范围以及具有3D/空间推理的归一化定位数据。该过程分四个阶段进行，上下文窗口逐渐增大（8K, 32K, 256K）。｜ 3000万内部 OCR 样本，300万 PDF。
+    - **SFT**: 利用两阶段流程（最初32k上下文，扩展至256k），整合了用于推理任务（数学、代码、逻辑）的“长思维链冷启动”数据和来自更强教师模型的知识蒸馏。包括“思考”和“非思考”变体以满足不同应用需求。
+    - **RL**: 实施推理 RL 和通用 RL 阶段以增强多模态推理和通用能力。此阶段可能采用奖励系统来与人类偏好对齐并优化特定任务性能。
 
 - **[Qwen2.5-Math](https://arxiv.org/pdf/2409.12122)** | `2024`
-    - **Pretraining**: Models are initialized from Qwen2.5 and trained on a massive corpus containing mathematical web texts, books, code, and exam questions. This corpus is enriched with synthetic data generated by Qwen2-Math-Instruct. ｜ Over 1 trillion tokens ｜ Qwen Math Corpus v2
-    - **SFT**: The model undergoes fine-tuning on diverse mathematical problems using both Chain-of-Thought (CoT) and Tool-Integrated Reasoning (TIR) formats. Data is synthesized and filtered via rejection sampling using a reward model. ｜ 580k English and 500k Chinese samples ｜ GSM8K, MATH, NuminaMath
-    - **RL**: A math-specific reward model is trained on preference data and used to guide reinforcement learning via Group Relative Policy Optimization (GRPO). This stage iteratively refines the model's reasoning capabilities without a value function.
+    - **Pretraining**: 模型从 Qwen2.5 初始化，并在包含数学网络文本、书籍、代码和考试题的大规模语料库上训练。该语料库通过 Qwen2-Math-Instruct 生成的合成数据进行了丰富。｜ 超过1万亿 token ｜ Qwen Math Corpus v2
+    - **SFT**: 模型使用思维链（CoT）和工具集成推理（TIR）格式在多样化的数学问题上进行微调。数据通过拒绝采样生成并经过奖励模型过滤。｜ 58万英文和50万中文样本 ｜ GSM8K, MATH, NuminaMath
+    - **RL**: 在偏好数据上训练数学专用奖励模型，并用于指导通过群组相对策略优化（GRPO）进行的强化学习。此阶段在没有价值函数的情况下迭代优化模型的推理能力。
 
 - **[Qwen2.5-Coder](https://arxiv.org/pdf/2409.12186)** | `2024`
-    - **Pretraining**: Trained on a vast corpus comprising source code, text-code grounding, synthetic data, mathematics, and general text. The process involves meticulous data cleaning, scalable synthetic data generation, and balanced mixing of file-level and repository-level data. ｜ 5.5 trillion tokens
-    - **SFT**: Utilizes a "recipe" for instruction data that includes multilingual code instructions and synthesis from GitHub. The training policy employs coarse-to-fine fine-tuning and mixed tuning, supported by a multilingual sandbox for code verification and checklist-based scoring.
-    - **RL**: Implements Direct Preference Optimization (DPO) specifically for code to align the model with human preferences.
+    - **Pretraining**: 在包含源代码、文本代码对应（grounding）、合成数据、数学和通用文本的庞大语料库上训练。过程涉及细致的数据清洗、可扩展的合成数据生成以及文件级和仓库级数据的平衡混合。｜ 5.5万亿 token
+    - **SFT**: 利用包含多语言代码指令和从 GitHub 合成数据的指令数据“配方”。训练策略采用从粗到细的微调和混合微调，并辅以用于代码验证的多语言沙盒和基于清单的评分。
+    - **RL**: 专门针对代码实施直接偏好优化（DPO），以使模型与人类偏好对齐。
 
 - **[NVIDIA Nemotron 3](https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-White-Paper.pdf)** | `2025`
-    - **Pretraining**: Demonstrates stable training on up to 25 trillion tokens using NVFP4 quantization. Includes a continued pre-training (CPT) stage at 512k sequence length utilizing synthetic data for long-range retrieval and multi-hop reasoning. | 25 trillion tokens
-    - **SFT**: Performed at a 256k sequence length to support extended context capabilities. Incorporates synthetic data designed for long-range retrieval, multi-hop reasoning, and multi-document information aggregation.
-    - **RL**: Uses multi-environment reinforcement learning to train simultaneously on tasks like competitive coding, math, and agentic tool use. Employs Group Relative Policy Optimization (GRPO) and includes long-context environments with inputs up to 32k tokens.
+    - **Pretraining**: 展示了使用 NVFP4 量化在高达25万亿 token 上的稳定训练。包括一个512k序列长度的持续预训练（CPT）阶段，利用合成数据进行长程检索和多跳推理。| 25万亿 token
+    - **SFT**: 在256k序列长度下执行，以支持扩展的上下文能力。整合了专为长程检索、多跳推理和多文档信息聚合设计的合成数据。
+    - **RL**: 使用多环境强化学习同时在竞技编程、数学和代理工具使用等任务上进行训练。采用群组相对策略优化（GRPO），并包括输入高达32k token 的长上下文环境。
 
 - **[NVIDIA Nemotron Nano 2](https://research.nvidia.com/labs/adlr/files/NVIDIA-Nemotron-Nano-2-Technical-Report.pdf)** | `2025`
-    - **Pretraining**: Trained on a diverse curriculum-based mixture (3 phases) including web crawl, math, code, and synthetic data, utilizing an FP8 training recipe. The process incorporates a "warmup-stable-decay" learning rate schedule and a subsequent long-context extension phase. ｜ 20 trillion tokens ｜ Nemotron-CC-v2, Nemotron-CC-Math-v1, Nemotron-Pretraining-Code-v1, Nemotron-Pretraining-SFT-v1
-    - - **SFT**: Utilizes a three-stage process: Stage 1 trains on full datasets with "empty" reasoning traces and 128k concatenation; Stage 2 focuses on tool-calling without concatenation; Stage 3 reinforces long-context capabilities with truncated reasoning traces. Data includes synthesized math/code/science (via DeepSeek-R1), tool-calling, and conversational pairs. ｜ ~80 billion tokens ｜ Nemotron-Post-Training-Dataset-v1, LMSYS, HelpSteer2/3, WildChat
-    - **RL**: Employs IFEval RL with rule-based verification for instruction adherence, iterative DPO for multi-step tool calling, and GRPO/RLHF for chat alignment. ｜ 16,000 prompts (IFEval RL) ｜ LMSYS Chat, WorkBench environment, HelpSteer3
+    - **Pretraining**: 在基于课程的多样化混合数据（3个阶段）上训练，包括网络爬虫、数学、代码和合成数据，利用 FP8 训练配方。该过程结合了“预热-稳定-衰减”学习率调度以及随后的长上下文扩展阶段。｜ 20万亿 token ｜ Nemotron-CC-v2, Nemotron-CC-Math-v1, Nemotron-Pretraining-Code-v1, Nemotron-Pretraining-SFT-v1
+    - **SFT**: 利用三阶段流程：阶段1在完整数据集上训练，包含“空”推理轨迹和128k拼接；阶段2专注于无拼接的工具调用；阶段3通过截断的推理轨迹增强长上下文能力。数据包括合成的数学/代码/科学（通过 DeepSeek-R1）、工具调用和对话对。｜ 约800亿 token ｜ Nemotron-Post-Training-Dataset-v1, LMSYS, HelpSteer2/3, WildChat
+    - **RL**: 采用基于规则验证的 IFEval RL 进行指令遵循训练，迭代 DPO 进行多步工具调用，以及 GRPO/RLHF 进行聊天对齐。｜ 16,000个提示词（IFEval RL）｜ LMSYS Chat, WorkBench environment, HelpSteer3
 
 - **[MiniMax-01](https://arxiv.org/pdf/2501.08313)** | `2025`
-    - **Pretraining**: The text model is trained on a diverse corpus comprising high-quality and low-quality data, utilizing global deduplication and a WSD-like learning rate schedule. The vision-language model (MiniMax-VL-01) is built through continued training on vision-language data. ｜ ~12 trillion tokens (text); 512 billion tokens (vision-language).
-    - **SFT**: The model undergoes an iterative fine-tuning process that transitions from short-context to long-context data to support extended context windows.
-    - **RL**: The alignment phase employs a combination of Offline Direct Preference Optimization (DPO) and Online Group Relative Policy Optimization (GRPO) to enhance model performance and safety.
+    - **Pretraining**: 文本模型在包含高质量和低质量数据的多样化语料库上训练，利用全局去重和类似 WSD 的学习率调度。视觉语言模型（MiniMax-VL-01）通过在视觉语言数据上的持续训练构建。｜ 约12万亿 token（文本）；5120亿 token（视觉语言）。
+    - **SFT**: 模型经历迭代微调过程，从短上下文过渡到长上下文数据，以支持扩展的上下文窗口。
+    - **RL**: 对齐阶段结合了离线直接偏好优化（DPO）和在线群组相对策略优化（GRPO），以增强模型性能和安全性。
 
 - **[MiniMax-M1](https://arxiv.org/pdf/2506.13585)** | `2025`
-    - **Pretraining**: Performs continual pretraining on a reasoning-intensive corpus to enable long-context capabilities (up to 1M tokens). ｜ 7.5T tokens ｜ Reasoning-intensive corpus
-    - **SFT**: Injects Chain-of-Thought (CoT) patterns, particularly reflection-based reasoning, to cold-start the model for RL. ｜ High-quality long CoT examples
-    - **RL**: Uses the CISPO algorithm on diverse verifiable and general domain tasks, employing rule-based verifiers and Generative Reward Models (GenRM). ｜ ~158K samples (50K Math, 53K Logic, 30K Coding, 25K General) ｜ SynLogic, Mathematical Reasoning, Competitive Programming, GitHub data
+    - **Pretraining**: 在推理密集型语料库上进行持续预训练，以启用长上下文能力（高达100万 token）。｜ 7.5万亿 token ｜ 推理密集型语料库
+    - **SFT**: 注入思维链（CoT）模式，特别是基于反思的推理，以便为 RL 冷启动模型。｜ 高质量长 CoT 示例
+    - **RL**: 在多样化的可验证和通用领域任务上使用 CISPO 算法，采用基于规则的验证器和生成式奖励模型（GenRM）。｜ 约15.8万样本（5万数学，5.3万逻辑，3万编程，2.5万通用）｜ SynLogic, Mathematical Reasoning, Competitive Programming, GitHub data
 
 - **[Kimi K2](https://arxiv.org/pdf/2507.20534)** | `2025`
-    - **Pretraining**: The model is trained on high-quality tokens using the MuonClip optimizer to ensure stability and token efficiency. ｜ 15.5 trillion tokens
-    - **SFT**: Utilizes a large-scale agentic data synthesis pipeline that systematically generates tool-use demonstrations and trajectories via simulated and real-world environments.
-    - **RL**: Employs a joint reinforcement learning framework where the model interacts with real and synthetic environments, using verifiable rewards (RLVR) and a self-critique rubric mechanism.
+    - **Pretraining**: 使用 MuonClip 优化器在高质量 token 上训练模型，以确保稳定性和 token 效率。｜ 15.5万亿 token
+    - **SFT**: 利用大规模 Agent 数据合成流水线，通过模拟和现实世界环境系统地生成工具使用演示和轨迹。
+    - **RL**: 采用联合强化学习框架，模型与真实和合成环境交互，使用可验证奖励（RLVR）和自我评判量规机制。
 
 - **[Kimi k1.5](https://arxiv.org/pdf/2501.12599)** | `2025`
-    - **Pretraining**: The model is initialized from a base model pre-trained on a large-scale multimodal corpus containing text (English, Chinese, code, math) and vision data.
-    - **SFT**: Utilizes a Vanilla SFT dataset of approximately 1 million text examples (500k QA, 200k coding, 200k math/science, 20k long-context) and 1 million text-vision examples (chart interpretation, OCR, etc.), generated via human annotation and rejection sampling. Also employs a Long-CoT SFT stage with a small, high-quality warmup dataset constructed via prompt engineering to teach planning and reflection.
-    - **RL**: Uses a curated RL prompt set covering STEM, coding, and general reasoning domains (text and image-text), processed with curriculum sampling (easy to hard) and prioritized sampling (focusing on underperforming areas). The process incorporates Online Mirror Descent with partial rollouts and length penalties to optimize reasoning efficiency without specific dataset scale mentioned for this stage.
+    - **Pretraining**: 模型从一个在大规模多模态语料库（包含文本（英、中、代码、数学）和视觉数据）上预训练的基础模型初始化。
+    - **SFT**: 利用约100万文本示例（50万问答，20万代码，20万数学/科学，2万长上下文）和100万图文示例（图表解释、OCR等）的普通 SFT 数据集，这些数据通过人工标注和拒绝采样生成。还采用长思维链（Long-CoT）SFT 阶段，使用通过提示工程构建的小规模高质量预热数据集来教授规划和反思。
+    - **RL**: 使用涵盖 STEM、编码和通用推理领域（文本和图文）的精选 RL 提示词集，通过课程采样（由易到难）和优先级采样（关注表现不佳的领域）进行处理。该过程结合了带有部分展开（rollouts）和长度惩罚的在线镜像下降（Online Mirror Descent），以优化推理效率，此阶段未提及具体数据规模。
 
 - **[Kimi-VL](https://arxiv.org/pdf/2504.07491)** | `2025`
-    - **Pretraining**: Utilizes a total of 4.4 trillion tokens across four stages (ViT training, joint pre-training, cooldown, and long-context activation), incorporating high-quality image-text pairs, interleaved data, and long-context data (text, video, documents). Sources include open-source datasets and in-house data, with synthetic data used in the cooldown phase. ｜ 4.4T tokens ｜ LAION, DataComp
-    - **SFT**: Employes "Joint Supervised Fine-Tuning" and "Long-CoT Supervised Fine-Tuning" using high-quality long Chain-of-Thought data generated by the Kimi k1.5 model. The process focuses on cognitive capabilities such as planning, evaluation, and reflection.
-    - **RL**: Applies reinforcement learning algorithms (similar to Kimi k1.5) to encourage the autonomous generation of structured CoT rationales for complex reasoning tasks.
+    - **Pretraining**: 跨四个阶段（ViT 训练、联合预训练、冷却和长上下文激活）利用共4.4万亿 token，整合高质量图文对、交错数据和长上下文数据（文本、视频、文档）。来源包括开源数据集和内部数据，并在冷却阶段使用了合成数据。｜ 4.4万亿 token ｜ LAION, DataComp
+    - **SFT**: 采用“联合有监督微调”和“长思维链有监督微调”，使用由 Kimi k1.5 模型生成的高质量长思维链数据。该过程专注于规划、评估和反思等认知能力。
+    - **RL**: 应用强化学习算法（类似于 Kimi k1.5），鼓励针对复杂推理任务自主生成结构化的 CoT以此依据。
 
 - **[InternVL 2.5](https://arxiv.org/pdf/2412.05271)** | `2024`
-    - **Pretraining**: Utilizes a progressive scaling strategy and dynamic high-resolution training (including MLP warmup and optional ViT incremental learning) with open-source web-scale image-text data. ｜ 120 billion tokens (total training for 78B model).
-    - **SFT**: Full model instruction tuning employs high-quality multimodal instruction datasets filtered via LLM-based quality scoring and heuristic rules (e.g., repetition detection).
-    - **RL**: Mixed Preference Optimization (MPO) is applied to enhance reasoning capabilities using a high-quality multimodal reasoning preference dataset constructed with positive and negative pairs. ｜ 3 million samples. ｜ MMPR (Multimodal Preference Reasoning dataset).
+    - **Pretraining**: 利用渐进式扩展策略和动态高分辨率训练（包括 MLP 预热和可选的 ViT 增量学习），使用开源网络规模图文数据。｜ 1200亿 token（78B模型总训练量）。
+    - **SFT**: 全模型指令微调采用高质量多模态指令数据集，通过基于 LLM 的质量评分和启发式规则（如重复检测）进行过滤。
+    - **RL**: 应用混合偏好优化（MPO）增强推理能力，使用由正负对构建的高质量多模态推理偏好数据集。｜ 300万样本。｜ MMPR（多模态偏好推理数据集）。
 
 - **[InternVL3](https://arxiv.org/pdf/2504.10479?)** | `2025`
-    - **Pretraining**: Adopts a "Native Multimodal Pre-Training" paradigm that jointly learns from multimodal and pure-text data in a single stage. Multimodal data leverages InternVL2.5 data (covering OCR, charts, math, etc.) supplemented with new real-world data (GUI, 3D, video), while pure text data is based on InternLM2.5 corpora enriched with open-source datasets.
-    - **SFT**: Constructs training corpora based on InternVL2.5 datasets, introducing additional samples for tool usage, 3D scene understanding, GUI operations, scientific diagrams, creative writing, and multimodal reasoning.
-    - **RL**: Employs Mixed Preference Optimization (MPO) using supervision from both positive and negative samples to align model responses. The training data is a subset of the SFT data and includes the MMPR dataset, comprising approximately 300K samples.
+    - **Pretraining**: 采用“原生多模态预训练”范式，在单一阶段联合学习多模态和纯文本数据。多模态数据利用 InternVL2.5 数据（涵盖 OCR、图表、数学等）并补充新的现实世界数据（GUI、3D、视频），而纯文本数据基于 InternLM2.5 语料库并丰富了开源数据集。
+    - **SFT**: 基于 InternVL2.5 数据集构建训练语料，引入了用于工具使用、3D 场景理解、GUI 操作、科学图表、创意写作和多模态推理的额外样本。
+    - **RL**: 采用混合偏好优化（MPO），使用来自正负样本的监督来对齐模型回答。训练数据是 SFT 数据的子集，并包括 MMPR 数据集，包含约30万样本。
 
-- **[InternVL3.5](https://arxiv.org/pdf/2508.18265?)** | `2025`
-    - **Pretraining**: The corpora consists of multimodal data sourced mainly from InternVL3 covering diverse domains (e.g., captioning, QA, math) and text-only data based on the InternLM series augmented with open-source datasets. The ratio between text-only and multimodal data is approximately 1:2.5. ｜ 116M samples (approx. 250B tokens) ｜ InternVL3 training corpora, InternLM series corpora
-    - **SFT**: Data is derived from three sources: reused instruction-following data from InternVL3, multimodal reasoning data in "Thinking" mode for long-thinking capabilities, and capability-expansion datasets for skills like GUI and embodied interaction. The text-only to multimodal ratio is roughly 1:3.5. ｜ 56 million samples (approx. 130 billion tokens) ｜ InternVL3 instruction data
-    - **RL**: Implements a Cascade RL framework using MMPR v1.2 for offline RL and MMPR-Tiny (a subset of MMPR-v1.2 extended with recent multimodal datasets) for online RL. The process reuses rollouts from the offline stage to reduce sampling costs. ｜ Offline: 200K sample pairs; Online: 70K queries ｜ MMPR v1.2, MMPR-Tiny
+- **[InternVL3.5](https://www.google.com/search?q=https://arxiv.org/pdf/2508.18265%3F)** | `2025`
+    - **Pretraining**: 语料库包含主要来自 InternVL3 的涵盖不同领域（如字幕、问答、数学）的多模态数据，以及基于 InternLM 系列并经开源数据集增强的纯文本数据。纯文本与多模态数据的比例约为 1:2.5。｜ 1.16亿样本（约2500亿 token）｜ InternVL3 training corpora, InternLM series corpora
+    - **SFT**: 数据来自三个来源：复用的 InternVL3 指令遵循数据、用于长思考能力的“思考”模式多模态推理数据，以及用于 GUI 和具身交互等技能的能力扩展数据集。纯文本与多模态的比例大致为 1:3.5。｜ 5600万样本（约1300亿 token）｜ InternVL3 instruction data
+    - **RL**: 实施级联 RL 框架，使用 MMPR v1.2 进行离线 RL，使用 MMPR-Tiny（MMPR-v1.2 的子集，扩展了最近的多模态数据集）进行在线 RL。该过程复用了离线阶段的 rollout 以降低采样成本。｜ 离线：20万样本对；在线：7万查询 ｜ MMPR v1.2, MMPR-Tiny
 
 - **[InternLM2](https://arxiv.org/pdf/2403.17297)** | `2024`
-    - **Pretraining**: Utilizes a multi-phase process starting with 4k context training on diverse data (text, code, web data), followed by long-context training (up to 32k) and capability-specific enhancement. The data pipeline involves rigorous filtering, deduplication, and the inclusion of "Needle-in-a-Haystack" compatible long-context data. ｜ Trillions of tokens ｜ Text, Code, Long-context data
-    - **SFT**: Aligned using a large-scale, diverse dataset designed to refine instruction following and human preference alignment. The process also constructs corresponding 32k long-context data to bolster long-term dependency capabilities. ｜ 10 million instruction instances
-    - **RL**: Employs COOL RLHF (Conditional Online RLHF) to address conflicting human preferences and reward hacking by using a conditional reward model. The reward models are trained on a massive set of preference data to guide the Proximal Policy Optimization (PPO) process. ｜ 2.4 million preference samples (Reward Model)
+    - **Pretraining**: 采用多阶段流程，从多样化数据（文本、代码、网页数据）上的 4k 上下文训练开始，随后是长上下文训练（高达 32k）和特定能力增强。数据流水线涉及严格过滤、去重以及包含兼容“大海捞针”测试的长上下文数据。｜ 数万亿 token ｜ Text, Code, Long-context data
+    - **SFT**: 使用旨在优化指令遵循和人类偏好对齐的大规模多样化数据集进行对齐。该过程还构建了相应的 32k 长上下文数据以增强长期依赖能力。｜ 1000万条指令实例
+    - **RL**: 采用 COOL RLHF（条件在线 RLHF），通过使用条件奖励模型解决相互冲突的人类偏好和奖励黑客攻击问题。奖励模型在大量偏好数据上训练，以指导近端策略优化（PPO）过程。｜ 240万偏好样本（奖励模型）
 
 - **[Intern-S1](https://arxiv.org/pdf/2508.15763)** | `2025`
-    - **Pretraining**: Continually pre-trained on a large-scale multimodal corpus including specialized scientific data (molecular structures, protein sequences, etc.) and general data, utilizing a text-only and multimodal pipeline to preserve fine-grained structures like equations and figures. ｜ 5 trillion tokens (including >2.5 trillion scientific tokens).
-    - **SFT**: Constructs a multimodal pipeline to generate instruction-style and exam-style supervision, employing rule-based filters and LLMs (e.g., Qwen2.5) to ensure structural integrity and answer completeness across six scientific domains.
-    - **RL**: Implements offline and online reinforcement learning within the InternBootCamp framework, utilizing a Mixture-of-Rewards (MoR) strategy to synergize training across diverse tasks. ｜ >1000 tasks.
+    - **Pretraining**: 在包含专业科学数据（分子结构、蛋白质序列等）和通用数据的大规模多模态语料库上持续预训练，利用纯文本和多模态流水线保留方程和图形等细粒度结构。｜ 5万亿 token（包括 >2.5万亿科学 token）。
+    - **SFT**: 构建多模态流水线以生成指令式和考试式监督数据，采用基于规则的过滤器和 LLM（如 Qwen2.5）确保跨六个科学领域的结构完整性和答案完整性。
+    - **RL**: 在 InternBootCamp 框架内实施离线和在线强化学习，利用混合奖励（MoR）策略协同跨不同任务的训练。｜ >1000个任务。
 
 - **[GLM-4.5](https://arxiv.org/pdf/2508.06471)** | `2025`
-    - **Pretraining**: Trained on a diverse corpus processed with quality classification, MinHash/SemDedup deduplication, and up-sampling of high-value content. The process includes a general phase followed by a "mid-training" phase focusing on repo-level code, synthetic reasoning data, and agent trajectories to enhance domain capabilities. ｜ 23T tokens (22T general + 1.1T specialized) ｜ Webpages, Books, Papers, Code Repositories, Synthetic Reasoning Data
-    - **SFT**: Utilizes an "Expert Model Iteration" strategy where specialized expert models (Reasoning, Agent, Chat) are trained and their capabilities are distilled into a unified model. This stage incorporates synthetic data and best-fit packing to support long-context agentic tasks. ｜ - ｜ Synthetic Agent Trajectories
-    - **RL**: Employs a single-stage reinforcement learning process at full context length (up to 128K) to refine alignment and performance. Feedback mechanisms include execution-based signals for coding and human preference data for general alignment.
+    - **Pretraining**: 在经过质量分类、MinHash/SemDedup 去重和高价值内容上采样的多样化语料库上训练。该过程包括通用阶段，随后是专注于仓库级代码、合成推理数据和 Agent 轨迹的“中期训练”阶段，以增强领域能力。｜ 23万亿 token（22T 通用 + 1.1T 专用）｜ Webpages, Books, Papers, Code Repositories, Synthetic Reasoning Data
+    - **SFT**: 利用“专家模型迭代”策略，训练专门的专家模型（推理、Agent、聊天）并将其能力蒸馏到统一模型中。此阶段整合了合成数据和最佳匹配打包（best-fit packing）以支持长上下文 Agent 任务。｜ - ｜ Synthetic Agent Trajectories
+    - **RL**: 在全上下文长度（高达 128K）下采用单阶段强化学习以优化对齐和性能。反馈机制包括用于编码的基于执行的信号和用于通用对齐的人类偏好数据。
 
 - **[GLM-4.5V and GLM-4.1V-Thinking](https://arxiv.org/pdf/2507.01006)** | `2025`
-    - **Pretraining**: Curates a broad corpus of knowledge-intensive multimodal data, including image-text pairs, interleaved academic/web texts, and annotated documents/videos, using rigorous filtering (heuristic, CLIP-based) and recaptioning. ｜ Over 10 billion image-text pairs, 100 million digitized academic books, 220 million OCR images. ｜ LAION, Wukong, MINT, MMC4.
-    - **SFT**: Uses high-quality long Chain-of-Thought (CoT) reasoning examples in a standardized format (<thinking> and <answer> blocks) to align the model's response style. Focuses on verifiable tasks like STEM and QA to bridge the gap to reinforcement learning.
-    - **RL**: Employs Reinforcement Learning with Curriculum Sampling (RLCS) using verifiable data across diverse domains (STEM, OCR, GUI). Selects or synthesizes data that can be efficiently improved through domain-specific reward systems (e.g., rule-based for math, model-based for soft tasks).
+    - **Pretraining**: 策划了广泛的知识密集型多模态数据语料库，包括图文对、交错的学术/网页文本和带注释的文档/视频，使用严格过滤（启发式、基于 CLIP）和重新生成描述（recaptioning）。｜ 超过100亿图文对，1亿本数字化技术书籍，2.2亿 OCR 图像。｜ LAION, Wukong, MINT, MMC4。
+    - **SFT**: 使用标准化格式（<thinking> 和 <answer> 块）的高质量长思维链（CoT）推理示例来对齐模型的响应风格。专注于像 STEM 和 QA 这样的可验证任务，以弥合通往强化学习的差距。
+    - **RL**: 采用带有课程采样（RLCS）的强化学习，使用跨不同领域（STEM、OCR、GUI）的可验证数据。选择或合成可以通过领域特定奖励系统（例如用于数学的基于规则的奖励，用于软任务的基于模型的奖励）有效改进的数据。
 
 - **[ChatGLM](https://arxiv.org/pdf/2406.12793)** | `2024`
-    - **Pretraining**: The models are pre-trained on a massive corpus consisting mostly of Chinese and English data, along with a small set of data from 24 other languages. The training data is diverse and includes web documents, books, and STEM text ｜ 10 trillion tokens.
-    - **SFT**: The model undergoes a multi-stage post-training process that includes supervised fine-tuning. This stage utilizes instruction tuning to align the model with user intent.
-    - **RL**: High-quality alignment is achieved through Reinforcement Learning from Human Feedback (RLHF). This process involves learning from human feedback to improve alignment and instruction following.
-
+    - **Pretraining**: 模型在主要由中文和英文数据组成的大规模语料库上进行预训练，并辅以来自其他24种语言的少量数据。训练数据多样化，包括网络文档、书籍和 STEM 文本 ｜ 10万亿 token。
+    - **SFT**: 模型经历多阶段后训练过程，其中包括有监督微调。此阶段利用指令微调使模型与用户意图对齐。
+    - **RL**: 通过基于人类反馈的强化学习（RLHF）实现高质量对齐。该过程涉及从人类反馈中学习，以改进对齐和指令遵循。
 
 
 ---
