@@ -1970,8 +1970,7 @@ English, Chinese, Multilingual, LowResource
 
 - **[NVIDIA Nemotron Nano 2](https://research.nvidia.com/labs/adlr/files/NVIDIA-Nemotron-Nano-2-Technical-Report.pdf)** | `2025`
     - **Pretraining**: Trained on a diverse curriculum-based mixture (3 phases) including web crawl, math, code, and synthetic data, utilizing an FP8 training recipe. The process incorporates a "warmup-stable-decay" learning rate schedule and a subsequent long-context extension phase. ｜ 20 trillion tokens ｜ Nemotron-CC-v2, Nemotron-CC-Math-v1, Nemotron-Pretraining-Code-v1, Nemotron-Pretraining-SFT-v1
-
-- **[SFT: Utilizes a three-stage process: Stage 1 trains on full datasets with "empty" reasoning traces and 128k concatenation; Stage 2 focuses on tool-calling without concatenation; Stage 3 reinforces long-context capabilities with truncated reasoning traces. Data includes synthesized math/code/science (via DeepSeek-R1), tool-calling, and conversational pairs. ｜ ~80 billion tokens ｜ Nemotron-Post-Training-Dataset-v1, LMSYS, HelpSteer2/3, WildChat]**
+    - - **SFT**: Utilizes a three-stage process: Stage 1 trains on full datasets with "empty" reasoning traces and 128k concatenation; Stage 2 focuses on tool-calling without concatenation; Stage 3 reinforces long-context capabilities with truncated reasoning traces. Data includes synthesized math/code/science (via DeepSeek-R1), tool-calling, and conversational pairs. ｜ ~80 billion tokens ｜ Nemotron-Post-Training-Dataset-v1, LMSYS, HelpSteer2/3, WildChat
     - **RL**: Employs IFEval RL with rule-based verification for instruction adherence, iterative DPO for multi-step tool calling, and GRPO/RLHF for chat alignment. ｜ 16,000 prompts (IFEval RL) ｜ LMSYS Chat, WorkBench environment, HelpSteer3
 
 - **[MiniMax-01](https://arxiv.org/pdf/2501.08313)** | `2025`
