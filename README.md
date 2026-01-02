@@ -1913,7 +1913,7 @@ Tags convey additional details: task, modality details, language, usage. A datas
 - **[DeepSeekMath](https://arxiv.org/pdf/2402.03300)** | `2024`
     - **Pretraining**: Constructed the DeepSeekMath Corpus by iteratively mining math-related content from Common Crawl using a fastText classifier trained on OpenWebMath. The model (initialized from DeepSeek-Coder-Base-v1.5 7B) was trained on 500B tokens, including 120B math tokens. ｜ 120B math tokens (500B total) ｜ DeepSeekMath Corpus, Common Crawl, OpenWebMath
     - **SFT**: Fine-tuned on mathematical problems with Chain-of-Thought (CoT), Program-of-Thought (PoT), and tool-integrated reasoning solutions. ｜ 776K samples ｜ CoT, PoT, Tool-integrated reasoning data
-    - **RL**: Employed Group Relative Policy Optimization (GRPO) on a subset of English instruction tuning data (questions related to GSM8K and MATH) to enhance reasoning without a critic model. ｜ 144K samples ｜ GSM8K, MATH (subset)
+    - **RL**: Employed Group Relative Policy Optimization (GRPO) on a subset of English instruction tuning data (questions related to GSM8K and MATH) to enhance reasoning without a critic model. ｜ 144K samples ｜ GSM8K, MATH 
 
 - **[DeepSeek-Coder](https://arxiv.org/pdf/2401.14196)** | `2024`
     - **Pretraining**: The model is trained from scratch on a project-level code corpus, utilizing repository-level data construction with dependency parsing and topological sorting to enhance cross-file generation. The training objective includes next-token prediction and a Fill-In-Middle (FIM) task. ｜ 2 trillion tokens ｜ 87% source code (87 languages), 10% English code-related text (GitHub Markdown, StackExchange), 3% Chinese natural language.
@@ -1934,7 +1934,7 @@ Tags convey additional details: task, modality details, language, usage. A datas
 
 - **[LLaMA](https://arxiv.org/pdf/2302.13971)** | `2023`
     - **Pretraining**: The training dataset is a mixture of publicly available sources, tokenized using the Byte-Pair Encoding (BPE) algorithm. The data preprocessing involves deduplication, language identification with a fastText classifier, and quality filtering with an n-gram language model. ｜ 1.4 trillion tokens (65B/33B models), 1 trillion tokens (7B/13B models) ｜ English CommonCrawl, C4, Github, Wikipedia, Gutenberg and Books3, ArXiv, StackExchange
-    - **SFT**: A single experiment (LLaMA-I) was conducted by fine-tuning on instruction data to improve MMLU performance. The process follows the protocol of Chung et al. (2022). ｜ Instruction dataset
+    - **SFT**: A single experiment (LLaMA-I) was conducted by fine-tuning on instruction data to improve MMLU performance. The process follows the protocol of Chung et al. (2022). 
 
 - **[Llama 2](https://arxiv.org/pdf/2307.09288)** | `2023`
     - **Pretraining**: Trained on a new mix of data from publicly available sources, strictly excluding data from Meta’s products or services and sites with sensitive personal information. ｜ 2 trillion tokens.
@@ -2029,7 +2029,7 @@ Tags convey additional details: task, modality details, language, usage. A datas
 - **[InternVL 2.5](https://arxiv.org/pdf/2412.05271)** | `2024`
     - **Pretraining**: Utilizes a progressive scaling strategy and dynamic high-resolution training (including MLP warmup and optional ViT incremental learning) with open-source web-scale image-text data. ｜ 120 billion tokens (total training for 78B model).
     - **SFT**: Full model instruction tuning employs high-quality multimodal instruction datasets filtered via LLM-based quality scoring and heuristic rules (e.g., repetition detection).
-    - **RL**: Mixed Preference Optimization (MPO) is applied to enhance reasoning capabilities using a high-quality multimodal reasoning preference dataset constructed with positive and negative pairs. ｜ 3 million samples. ｜ MMPR (Multimodal Preference Reasoning dataset).
+    - **RL**: Mixed Preference Optimization (MPO) is applied to enhance reasoning capabilities using a high-quality multimodal reasoning preference dataset constructed with positive and negative pairs. ｜ 3 million samples. ｜ MMPR.
 
 - **[InternVL3](https://arxiv.org/pdf/2504.10479?)** | `2025`
     - **Pretraining**: Adopts a "Native Multimodal Pre-Training" paradigm that jointly learns from multimodal and pure-text data in a single stage. Multimodal data leverages InternVL2.5 data (covering OCR, charts, math, etc.) supplemented with new real-world data (GUI, 3D, video), while pure text data is based on InternLM2.5 corpora enriched with open-source datasets.
@@ -2049,11 +2049,11 @@ Tags convey additional details: task, modality details, language, usage. A datas
 - **[Intern-S1](https://arxiv.org/pdf/2508.15763)** | `2025`
     - **Pretraining**: Continually pre-trained on a large-scale multimodal corpus including specialized scientific data (molecular structures, protein sequences, etc.) and general data, utilizing a text-only and multimodal pipeline to preserve fine-grained structures like equations and figures. ｜ 5 trillion tokens (including >2.5 trillion scientific tokens).
     - **SFT**: Constructs a multimodal pipeline to generate instruction-style and exam-style supervision, employing rule-based filters and LLMs (e.g., Qwen2.5) to ensure structural integrity and answer completeness across six scientific domains.
-    - **RL**: Implements offline and online reinforcement learning within the InternBootCamp framework, utilizing a Mixture-of-Rewards (MoR) strategy to synergize training across diverse tasks. ｜ >1000 tasks.
+    - **RL**: Implements offline and online reinforcement learning within the InternBootCamp framework, utilizing a Mixture-of-Rewards (MoR) strategy to synergize training across diverse tasks. 
 
 - **[GLM-4.5](https://arxiv.org/pdf/2508.06471)** | `2025`
     - **Pretraining**: Trained on a diverse corpus processed with quality classification, MinHash/SemDedup deduplication, and up-sampling of high-value content. The process includes a general phase followed by a "mid-training" phase focusing on repo-level code, synthetic reasoning data, and agent trajectories to enhance domain capabilities. ｜ 23T tokens (22T general + 1.1T specialized) ｜ Webpages, Books, Papers, Code Repositories, Synthetic Reasoning Data
-    - **SFT**: Utilizes an "Expert Model Iteration" strategy where specialized expert models (Reasoning, Agent, Chat) are trained and their capabilities are distilled into a unified model. This stage incorporates synthetic data and best-fit packing to support long-context agentic tasks. ｜ - ｜ Synthetic Agent Trajectories
+    - **SFT**: Utilizes an "Expert Model Iteration" strategy where specialized expert models (Reasoning, Agent, Chat) are trained and their capabilities are distilled into a unified model. This stage incorporates synthetic data and best-fit packing to support long-context agentic tasks. 
     - **RL**: Employs a single-stage reinforcement learning process at full context length (up to 128K) to refine alignment and performance. Feedback mechanisms include execution-based signals for coding and human preference data for general alignment.
 
 - **[GLM-4.5V and GLM-4.1V-Thinking](https://arxiv.org/pdf/2507.01006)** | `2025`
