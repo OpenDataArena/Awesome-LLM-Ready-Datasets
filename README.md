@@ -1,6 +1,10 @@
 # Awesome-LLM-Ready-Datasets
 [🇨🇳 中文版 README](./README_zh.md)
-> A curated collection of datasets ready for training large language or multimodal models — including text, code, multimodal, agent domains.
+
+A curated collection of datasets ready for training large language or multimodal models (LLMs, MLLMs) — including text, code, multimodal, agent domains. Besides, the data information introduced in the well-known technical reports is also collected. 
+> Popular datasets are marked with 🔥.
+
+> Github stars and HuggingFace downloads are counted. 
 
 <p align="center">
   <img src="./llm-ready-datasets.png" alt="llm-datasets" width="700">
