@@ -6,6 +6,13 @@
   <img src="./llm-ready-datasets.png" alt="llm-datasets" width="700">
 </p>
 
+
+## Update log
+* `2026.1.1` Release the first version, collect naer 800+ datasets among different categories.
+* `2026.1.2` Collect the data information in remarkable technical reports. 
+
+---
+
 ## Quick Navigation  
 - [Classification Framework](#classification-framework)  
 - **Dataset Index**  
@@ -36,11 +43,6 @@
 - [Data in Tech Report](#data-in-tech-report)
 - [Related Resouces](#related-resources)
 - [Contribution Guide](#contribution-guide)  
-
----
-
-## Update log
-* `2026.1.1` Release the first version, collect naer 800+ datasets among different categories.
 
 
 ---
